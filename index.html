@@ -1,9 +1,12 @@
 <!doctype html>
 <html>
   <head>
+   <meta name="viewport" content="width=device-width"/>     
+  
    <link href="css/main.css" rel="stylesheet" />
    <link href="css/projects.css" rel="stylesheet" />
    <link href="css/yesterday.css" rel="stylesheet" />
+   <link href="css/slide.css" rel="stylesheet" />
    <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:400,700' rel='stylesheet' type='text/css'>
    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400italic' rel='stylesheet' type='text/css'>
    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -19,7 +22,7 @@
     <div class="header" id="headithard" ng-controller="headerController">
       <div class="intheheader" >
           <a href='/' id='myHead'>
-            <img src="./pics/me.jpg" ng-mouseover="dillashow()" ng-mouseleave="dillahide()">
+            <img src="./pics/siteuse/me.jpg" ng-mouseover="dillashow()" ng-mouseleave="dillahide()">
           </a>          
           <div id='headerh1div'>
            <div>
@@ -38,25 +41,25 @@
 
 		<div class="menu-container">
 			<ul class="menu">
-				<li class='litab' id="atab"><a  class='qq' href="#">AboutMe</a>
-					
+				<li class='litab' id="atab"><a  class='qq' href="#/aboutme">AboutMe</a>
+					<!--
 					<ul>
 						<li><a href="#"> introduce</a></li>
 						<li><a href="#"> resume</a></li>
 					</ul>
-					
+					-->
 				</li>
 				<li class='litab' id="ptab"><a class='qq' href="#/projects">PROJECTS</a>
-					
+					<!--
 					<ul>
 						<li><a href="#"> p1</a></li>
 						<li><a href="#"> p2 </a></li>
 						<li><a href="#"> p3</a></li>
 						<li><a href="#"> p4</a></li>
 					</ul>
-					
+					-->
 				</li>
-				<li class='litab' id="ytab"><a href="#/yesterday"><img src="pics/yesterday.jpg"></a></li>
+				<li class='litab' id="ytab"><a href="#/yesterday"><img src="./pics/siteuse/yesterday.jpg"></a></li>
 				
 				
 
@@ -80,11 +83,13 @@
     <script src="js/controllers/headerController.js"></script> 
     <script src="js/controllers/yesterdayController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
+    <script src="js/controllers/aboutmeController.js"></script>
 
     <!-- Directives -->
     <script src="js/directives/d3Directive.js"></script>
     <script src="js/directives/ytDirective.js"></script>
     <script src="js/directives/flyDirective.js"></script>
+    <script src="js/directives/slideDirective.js"></script>
     
 
     <!-- Factories/Services -->
