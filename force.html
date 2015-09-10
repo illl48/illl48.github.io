@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Force Layout Example 6</title>
+<link href="css/d3.css" rel="stylesheet" />
+<script src='http://d3js.org/d3.v3.min.js'></script>
+</head>
+<body>
+   <svg></svg>   
+
+    
+    <script>
+            var  circle_click=function(evt) {
+      var circle = evt.target;
+      var currentRadius = circle.getAttribute("r");
+      if (currentRadius == 10)
+        circle.setAttribute("r", currentRadius*2);
+      else
+        circle.setAttribute("r", currentRadius*0.5);
+    } 
+     
+    var covers=[{artist:'sugarhill',
+                  name:"rapper's delight",   
+                  pic:'./pics/sugarhill.jpg',
+                  link:'https://www.youtube.com/watch?v=rKTUAESacQM',
+                  starttime: 9,
+                  endtime: 11,
+                 },
+                 {artist:'DEF JEF',
+                  name:"Here We Go Again",   
+                  pic:'./pics/def_jef_here_we_go_again.jpg',
+                  link:'https://www.youtube.com/watch?v=c1XXi93F0lg',
+                  starttime: 18,
+                  endtime: 20,
+                 },
+                 {artist:'Black Eyed Peas',
+                  name:"Bridging the Gap",   
+                  pic:'./pics/Black_Eyed_Peas_-_Bridging_the_Gap.jpg',
+                  link:'https://en.wikipedia.org/wiki/Bridging_the_Gap_(Black_Eyed_Peas_album)',
+                  starttime: 21,
+                  endtime: 26,
+                 },
+                 {artist:'Audio Two',
+                  name:"What More Can I Say?",   
+                  pic:'./pics/AudioTwo.jpg',
+                  link:'https://www.youtube.com/watch?v=I3_4Y7BlF9I',
+                  starttime: 32,
+                  endtime: 34,
+                 },
+                 {artist:'nwa',
+                  name:"Greatest Hits",   
+                  pic:'./pics/nwa.jpg',
+                  link:'https://www.youtube.com/watch?v=n3Jwxs9b_gE&list=PLB91F90C64D681FE8',
+                  starttime: 35,
+                  endtime: 37,
+                 },
+                 {artist:'Black Sheep',
+                  name:"A Wolf in Sheep's Clothing",   
+                  pic:'./pics/BlackSheep.jpg',
+                  link:'https://www.youtube.com/watch?v=tuCQiQ0A8Bw',
+                  starttime: 37,
+                  endtime: 48,
+                 },
+                 {artist:'MCCOY TYNER',
+                  name:"ELVIN SIR JONES",   
+                  pic:'./pics/MCCOY_TYNER_ELVIN_SIR_JONES.jpg',
+                  link:'https://www.youtube.com/watch?v=jGpaBE7Vku0',
+                  starttime: 39,
+                  endtime: 48,
+                 },
+                 {artist:'Queen Latifah',
+                  name:"All Hail the Queen",   
+                  pic:'./pics/queen.jpg',
+                  link:'https://www.youtube.com/watch?v=fU-5dNqNvD0',
+                  starttime: 57,
+                  endtime: 59,
+                 },
+                 {artist:'Run–D.M.C.',
+                  name:"Tougher Than Leather",   
+                  pic:'./pics/tougher.jpg',
+                  link:'https://www.youtube.com/watch?v=PFvYm-i3vls',
+                  starttime: 58,
+                  endtime: 61,
+                 },
+                 {artist:'Ice-T',
+                  name:"Power",   
+                  pic:'./pics/power.jpg',
+                  link:'https://www.youtube.com/watch?v=7K03hFhiW9E',
+                  starttime: 62,
+                  endtime: 64,
+                 },
+                 {artist:'digable planets',
+                  name:"Reachin' (A New Refutation of Time and Space)",   
+                  pic:'./pics/reachin.jpg',
+                  link:'https://www.youtube.com/watch?v=Q3698kK8wGc',
+                  starttime: 66,
+                  endtime: 75,
+                 },
+                 {artist:'Art Blakey & The Jazz Messengers',
+                  name:"Reflections In Blue",   
+                  pic:'./pics/Reflections.jpg',
+                  link:'https://www.youtube.com/watch?v=9NIXnkHu7UY',
+                  starttime: 67,
+                  endtime: 73,
+                 },
+                 {artist:'Digable Planets',
+                  name:"Rebirth Of Slick (Cool Like Dat)",   
+                  pic:'./pics/rebirth.jpg',
+                  link:'https://www.youtube.com/watch?v=cM4kqL13jGM',
+                  starttime: 67,
+                  endtime: 73,
+                 },
+                 {artist:'Digable Planets',
+                  name:"Beyond The Spectrum: The Creamy Spy Chronicles",   
+                  pic:'./pics/beyond.jpg',
+                  link:'http://www.discogs.com/Digable-Planets-Beyond-The-Spectrum-The-Creamy-Spy-Chronicles/master/19978',
+                  starttime: 76,
+                  endtime: 82,
+                 },
+                 {artist:'De La Soul',
+                  name:"3 Feet High And Rising",   
+                  pic:'./pics/3 Feet High And Rising.jpg',
+                  link:'https://youtu.be/z1CaN4thI5w',
+                  starttime: 85,
+                  endtime: 101,
+                 },
+                 {artist:'De La Soul',
+                  name:"De La Soul Is Dead",   
+                  pic:'./pics/De La Soul Is Dead.jpg',
+                  link:'https://youtu.be/SSOxle8AsHU',
+                  starttime: 88,
+                  endtime: 100,
+                 },
+                 {artist:'Doug E. Fresh & the Get Fresh Crew',
+                  name:"The World's Greatest Entertainer",   
+                  pic:'./pics/doug.jpg',
+                  link:'https://www.youtube.com/watch?v=gLDyw8hYvpI',
+                  starttime: 100,
+                  endtime: 103,
+                 },
+                 {artist:'X-Clan',
+                  name:"The One / Blackwards Row",   
+                  pic:'./pics/xclan.jpg',
+                  link:'http://www.discogs.com/X-Clan-The-One-Blackwards-Row/release/1481755',
+                  starttime: 103,
+                  endtime: 105,
+                 },
+                ]; 
+     
+     var videolength= 331;
+     
+ //Width and height
+    var w = 1200;
+    var h = 500;
+    var padding = 20;
+ 
+ //Create the SVG Viewport
+ var svgContainer = d3.select("svg").attr("width", w).attr("height", h);
+ 
+  var albumdata=covers;   
+     
+     
+var config = {
+    "avatar_size" : 40
+}
+     
+ //Create the Scale we will use for the Axis
+ var axisScale = d3.scale.linear()
+                          .domain([0, videolength])
+                          .range([padding, w - padding * 2]);
+
+//Create the Axis
+var xAxis = d3.svg.axis().scale(axisScale).ticks(videolength-2);
+
+
+//Create an SVG group Element for the Axis elements and call the xAxis function
+var xAxisGroup = svgContainer.append("g").attr("class", "axis").attr("transform", "translate(0,"+h/2+")")                             .call(xAxis);
+     
+/////////////     
+var defs = svgContainer.append('svg:defs');
+var pattern = defs.selectAll("pattern").data(albumdata).enter().append("svg:pattern")
+    .attr("id", function (d,i) { return i;})
+    .attr("width", config.avatar_size)
+    .attr("height", config.avatar_size)
+    .append("svg:image")
+    .attr("xlink:href", function (d) { return d.pic;})
+    .attr("width", config.avatar_size)
+    .attr("height", config.avatar_size)
+    .attr("x", 0)
+    .attr("y", 0);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+var force = null,
+    nodes = null;
+
+
+
+
+var initForce = function() {
+
+    svg=svgContainer;
+    //svg.selectAll('*').remove();
+
+
+    var dataNodes = covers;
+
+
+
+    force = d3.layout.force()
+        .size([w, h])
+        .nodes(dataNodes);
+
+
+ //   force.gravity(0);
+
+///*
+    force.charge(function(node) {
+        //if (node.className === 'red')  return 0;
+        return 11;
+    });
+//*/
+    
+
+    
+    ///
+    
+    nodes = svg.selectAll('.node')
+        .data(dataNodes)
+        .enter().append('circle')
+        .attr('class', 'node')
+        .attr('r', config.avatar_size/2)
+        .attr("onclick", "circle_click(evt)")
+        .attr('cx', function(d) { return (d.starttime*(w - padding * 2)/videolength)+padding; })
+        .attr('cy', h/2)
+        .style("fill", function (d,i) { return "url(#"+i+")";});  
+
+
+
+
+    // Finally we tell D3 that we want it to call the step
+    // function at each iteration.
+
+    force.on('tick', function() {
+
+    
+      //nodes.each(function(d){d.y+=5;});
+        //nodes.attr('cx', function(d) { return d.x; });
+           svg.selectAll('circle').attr('cy', function(d,i) { 
+               if(i > 0 ){ 
+                   console.log("qq");
+                   if(d.starttime === dataNodes[i-1].starttime){
+                     console.log("U");
+                       d.y+=1;}
+               }
+               console.log("zzz");
+                
+               return d.y; 
+           });
+
+   });
+
+};
+initForce();
+force.start();
+</script>
+</body>
+</html>
