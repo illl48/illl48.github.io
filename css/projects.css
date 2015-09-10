@@ -60,9 +60,10 @@ slide{
      
   margin:25px;    
   float: left;
-  
+  height: 275px;
     width: 630px; 
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:16px;
      
 }
 
