@@ -1,6 +1,6 @@
 app.controller('headerController', ['$scope','$window', function($scope,$window) {
 
- $scope.left=["0", "-100%"]; 
+ $scope.left=["0", "-650px"]; 
  $scope.neversleepleft=$scope.left[1];
  $scope.dillaleft=$scope.left[1];    
  $scope.myname="Edward Lai";
