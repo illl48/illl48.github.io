@@ -185,14 +185,21 @@ a{
 }
 
   #ytab {    
-    width:70px;  
+    width:70px;
+    overflow: hidden;  
   }
+
 
   #ytab img{ 
     position: relative;
     top: 3px;  
     width:70px;
-    height: auto;  
+    height: auto; 
+    transition: all 0.5s ease-in-out;  
+  }
+
+  #ytab img:hover{    
+    transform: rotate(360deg);
   }
 
   #ptab {    
@@ -246,7 +253,9 @@ a{
 
 }
 
-
+.menu-container .menu .litab .qq:hover{
+  color: rgb(172,207,209);
+}
 
 /** add fo second level menu  **/
 .menu-container .menu li  > ul{ 
