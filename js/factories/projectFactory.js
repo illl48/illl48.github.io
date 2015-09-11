@@ -5,7 +5,7 @@ app.factory("pFac", function(){
         title:'Covers in Yesterday',
         tech:'HTML, JavaScript, AngularJS, d3.js, NodeJs/express, mongodb',
         desc:[
-                {d:"A MEAN stack webpage which allows users to add covers' information showed in the Yesterday Youtube video."},
+                {d:"A MEAN stack webpage which allows users to add information about  covers showed in the Yesterday Youtube video."},
             {d:"Used d3.js to display the covers' information."}
              ],
         imgs:[
