@@ -53,6 +53,7 @@
   display: none;
 }
 
+
 .inPd{
   position:relative;   
   width:80%;
@@ -123,7 +124,22 @@
 }
 
 
-
+@media all and (max-width: 530px) {
+  .pcover {    
+    display: none;
+  }
+  .ptext .ptitle{
+    font-size: 26px; 
+  }
+  .ptext .techused, .ptext .aftertechused{
+    display:inline;
+    right:0px;     
+  } 
+  .ptext .pdescription{
+    /*display: block; */
+    right:0px;    
+  }    
+}
 
 
 
