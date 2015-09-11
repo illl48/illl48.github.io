@@ -90,6 +90,11 @@
   font-size: 26px; 
 }
 
+.overflowhidden{
+  position: relative;    
+  overflow: hidden;
+}
+
 .ptext .techused{
     position: relative;
   font-weight:bold;
