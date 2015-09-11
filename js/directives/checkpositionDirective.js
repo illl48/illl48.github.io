@@ -2,8 +2,9 @@ app.directive("checkposition", function($window) {
   return {
         restrict: 'A',
         link: function(scope, element, attrs){
-            
-          
+           scope.idd;
+            scope.idu; 
+           
             
           element.bind('mouseenter',function() {
             console.log('=======');
@@ -15,34 +16,38 @@ app.directive("checkposition", function($window) {
           winbottom=$window.innerHeight;  
               
             if(ptop<wintop&&pbottom>wintop){
-                yd=wintop-ptop;  
+                yd=wintop-ptop-10;  
                 console.log('yd='+yd); 
-                /*
-                idd = setInterval(function(){
-                  if(yd<=0) clearInterval(idd);
+                ///*
+                scope.idd = setInterval(function(){
+                  if(yd<=0) clearInterval(scope.idd);
                   $window.scrollBy(0, -10);
                     console.log('scroll down');
                   yd-=10;
-                },10);
-                */
-                $window.scrollBy(0, -1*yd);
+                },20);
+                //*/
+                //$window.scrollBy(0, -1*yd);
               }
               
               if(ptop<winbottom&&pbottom>winbottom){
                 
-                yu=pbottom-winbottom;  
+                yu=pbottom-winbottom-10;  
                 console.log('yu='+yu); 
-                /*  
-                idu = setInterval(function(){
-                  if(yu<=0) clearInterval(idu);
+                ///*  
+                scope.idu = setInterval(function(){
+                  if(yu<=0) clearInterval(scope.idu);
                   $window.scrollBy(0, 10);
                     console.log('scroll up ');
                   yu-=10;
-                },10);
-                */
-                 $window.scrollBy(0, yu); 
+                },20);
+                //*/
+                 //$window.scrollBy(0, yu); 
               }   
           });
+          element.bind('mouseleave',function() {
+            clearInterval(scope.idd);
+            clearInterval(scope.idu);
+          });    
         }
   };
 });
