@@ -39,6 +39,20 @@
   
 }
 
+.pcover{
+  position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: teal;
+    opacity: 0.3;
+    z-index: 2;
+    display: block;
+}
+
+.pd:hover .pcover{
+  display: none;
+}
+
 .inPd{
   position:relative;   
   width:80%;
@@ -58,34 +72,44 @@
 
 
 .ptext{
-
    padding-top: 25px; 
    position: relative;
-   
-      
-     
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:16px;
-     
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size:16px;     
 }
 
 .ptext .ptitle{
-  font-size: 26px;  
+  font-size: 45px;  
    font-weight:bold;
+    transition: all 0.3s ease-in-out;  
+}
+
+.pd:hover .ptext .ptitle{
+  font-size: 26px; 
 }
 
 .ptext .techused{
   font-weight:bold;
+  display: none;    
 }
 
-.ptext .pdescription{
-     
+.ptext .aftertechused{
+  display: none;
+}
+
+.pd:hover .ptext .techused, .pd:hover .ptext .aftertechused{
+  display: block;
+}
+
+.ptext .pdescription{   
   position: relative;
-  
-    
+  display: none; 
+  transition: all 0.3s ease-in-out;      
 }
 
-
+.pd:hover .ptext .pdescription{
+  display: block; 
+}
 
 
 

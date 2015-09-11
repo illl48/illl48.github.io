@@ -9,11 +9,12 @@
 
 
 <div class="pd"  ng-repeat="proj in projectList">
+ <div class="pcover"></div>
  <div class="inPd">
   <slide source="proj.imgs"></slide>
   <article class="ptext">
       <p class="ptitle">{{proj.title}}</p>
-      <p class="ptech"><div class="techused">Technologies used:</div>&nbsp; {{proj.tech}}</p>
+      <p class="ptech"><div class="techused">Technologies used:</div><span class="aftertechused">&nbsp; {{proj.tech}}</span></p>
       <ul class="pdescription">
         <li ng-repeat=" descli in proj.desc">{{descli.d}}</li>     
       </ul>
