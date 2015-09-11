@@ -77,7 +77,7 @@
    position: relative;
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size:16px;  
-    overflow: hidden;  
+    
 }
 
 .ptext .ptitle{
@@ -96,13 +96,15 @@
   /*display: none;*/
     transition: all 0.5s ease-in-out; 
     right: -100%; 
+   
 }
 
 .ptext .aftertechused{
     position: relative;
   /*display: none;*/
     transition: all 0.5s ease-in-out; 
-  right: -100%;   
+  right: -100%;  
+    
 }
 
 .pd:hover .ptext .techused, .pd:hover .ptext .aftertechused{
@@ -115,6 +117,7 @@
   /*display: none;*/
   right: -100%;    
   transition: all 0.5s ease-in-out; 
+   
     
 }
 
