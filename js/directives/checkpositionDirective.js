@@ -15,7 +15,7 @@ app.directive("checkposition", function($window) {
           wintop=80;
           winbottom=$window.innerHeight;  
               
-            if(ptop<wintop&&pbottom>wintop){
+            if(ptop<wintop&&pbottom>wintop&&pbottom<winbottom){
                 yd=wintop-ptop-15;  
                 console.log('yd='+yd); 
                 ///*
@@ -29,7 +29,7 @@ app.directive("checkposition", function($window) {
                 //$window.scrollBy(0, -1*yd);
               }
               
-              if(ptop<winbottom&&pbottom>winbottom){
+              if(ptop<winbottom&&pbottom>winbottom&&ptop>wintop){
                 
                 yu=pbottom-winbottom-15;  
                 console.log('yu='+yu); 
