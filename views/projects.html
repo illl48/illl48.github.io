@@ -5,33 +5,30 @@
 </div>
 
 <div class="allprojects">
-
-
-
-<div class="pd"  ng-repeat="proj in projectList" checkposition>
- <div class="pcover"></div>
- <div class="inPd" >
-  <slide source="proj.imgs"></slide>
-  <article class="ptext">
-      <p class="ptitle">{{proj.title}}</p>
-      <div class="overflowhidden">
-          <p class="ptech">
-            <div class="techused">Technologies used:</div>
-            <div class="aftertechused">&nbsp; {{proj.tech}}</div>
-          </p>
-          <ul class="pdescription">
-            <li ng-repeat=" descli in proj.desc">{{descli.d}}</li>     
-          </ul>
-      </div>  
-  </article>
-  </div>    
+    <div class="pd"  ng-repeat="proj in projectList" checkposition>
+     <div class="pcover"></div>
+     <div class="inPd" >
+      <slide source="proj.imgs"></slide>
+      <article class="ptext">
+          <p class="ptitle">{{proj.title}}</p>
+          <div class="overflowhidden">
+              <p class="ptech">
+                <div class="techused">Technologies used:</div>
+                <div class="aftertechused">&nbsp; {{proj.tech}}</div>
+              </p>
+              <ul class="pdescription">
+                <li ng-repeat=" descli in proj.desc">{{descli.d}}</li>     
+              </ul>
+          </div>  
+      </article>
+      </div>    
+    </div>
+    
+    <div class='projectpadding'></div>
 </div>
+    
 
 
-
-
-
-</div>
 
 <div class="pe">
   <div><img id="totop" src="./pics/siteuse/arrow.png" ng-click="clickup()"></div>       
