@@ -16,7 +16,7 @@ app.directive("checkposition", function($window) {
           winbottom=$window.innerHeight;  
               
             if(ptop<wintop&&pbottom>wintop){
-                yd=wintop-ptop-10;  
+                yd=wintop-ptop-15;  
                 console.log('yd='+yd); 
                 ///*
                 scope.idd = setInterval(function(){
@@ -31,7 +31,7 @@ app.directive("checkposition", function($window) {
               
               if(ptop<winbottom&&pbottom>winbottom){
                 
-                yu=pbottom-winbottom-10;  
+                yu=pbottom-winbottom-15;  
                 console.log('yu='+yu); 
                 ///*  
                 scope.idu = setInterval(function(){

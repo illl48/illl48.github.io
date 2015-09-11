@@ -75,13 +75,14 @@
    padding-top: 25px; 
    position: relative;
    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size:16px;     
+    font-size:16px;  
+    overflow: hidden;  
 }
 
 .ptext .ptitle{
-  font-size: 45px;  
+  font-size: 30px;  
    font-weight:bold;
-    transition: all 0.3s ease-in-out;  
+    transition: all 0.5s ease-in-out;  
 }
 
 .pd:hover .ptext .ptitle{
@@ -89,26 +90,36 @@
 }
 
 .ptext .techused{
+    position: relative;
   font-weight:bold;
-  display: none;    
+  /*display: none;*/
+    transition: all 0.5s ease-in-out; 
+    right: -100%; 
 }
 
 .ptext .aftertechused{
-  display: none;
+    position: relative;
+  /*display: none;*/
+    transition: all 0.5s ease-in-out; 
+  right: -100%;   
 }
 
 .pd:hover .ptext .techused, .pd:hover .ptext .aftertechused{
   display:inline;
+  right:0px;     
 }
 
 .ptext .pdescription{   
   position: relative;
-  display: none; 
-  transition: all 0.1s ease-in-out;      
+  /*display: none;*/
+  right: -100%;    
+  transition: all 0.5s ease-in-out; 
+    
 }
 
 .pd:hover .ptext .pdescription{
-  display: block; 
+  /*display: block; */
+ right:0px;    
 }
 
 
