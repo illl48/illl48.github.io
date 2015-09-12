@@ -1,14 +1,16 @@
 app.controller('aboutmeController', ['$scope','$window', function($scope,$window) {
 
-$scope.email="edwardlai3582@gmail.com"; 
+$scope.linkedinlink='https://www.linkedin.com/in/edlai48';    
+$scope.email='edwardlai3582@gmail.com'; 
     
-$scope.imgs=[
-    {image: './pics/projects/image01.png', description: 'Image 01'},
-    {image: './pics/projects/image02.png', description: 'Image 02'},
-    {image: './pics/projects/image03.png', description: 'Image 03'},
-    {image: './pics/projects/image04.png', description: 'Image 04'},
-    {image: './pics/projects/image05.png', description: 'Image 05'}
+$scope.gallery=[
+    {image: './pics/siteuse/withpete.jpg', description: '# Pete Rock & me'},
+    {image: './pics/siteuse/NABLER.jpg', description: '# Toy I got recently!'},
+    {image: './pics/siteuse/mocha.jpg', description: '# Mocha lol'},
 ];
- 
+
+$scope.imagenumber=$scope.gallery.length;    
+$scope.selected={value: 0};
+$scope.showform=false;    
      
 }]);

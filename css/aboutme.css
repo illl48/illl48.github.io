@@ -1,12 +1,13 @@
-.aboutmediv{
+.aboutmediv{   
   position: relative;
   width: 60%;
   height: auto;    
   left: 20%;    
-  top: 100px;      
+  top: 100px;    
 }
 
 .aboutmediv .textpart{
+  z-index: 2;    
   float: left;    
   width: 48%;
   min-width: 220px;  
@@ -15,6 +16,7 @@
   margin-bottom: 20px;    
 }
 .aboutmediv .picpart{
+  z-index: 2;    
   float: left;    
   position: relative;
   width: 48%;
@@ -57,7 +59,7 @@
   position: absolute;    
   width:18px;
   height: 18px;
-  display: block;    
+  display: block;      
 }
 
 .linkedin .lb{
@@ -111,7 +113,14 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;    
   font-weight:bold;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  width:100px;    
 }
+
+.aboutmediv .resumep:hover{
+  color:black;
+}
+
 .aboutmediv .emailp{
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;    
   display: inline;
@@ -120,20 +129,222 @@
 
 /*****************************************/
 
+.aboutmediv .picpart .gallery{
+  position: relative;
+  width: 100%;
+  min-width: 335px;
+  height:300px;
+  margin:0 auto;  
+  display: block; 
+}
 
-.aboutmediv .picpart img{
+.gallerywindow{
+  position: absolute;
+  width: 100%;
+  height:250px;
+  overflow: hidden;    
+}
+
+.gallerywindow img{
+  position: absolute;    
   border-radius: 15px;
   border-width: 4px;    
   border-color: white;
   border-style: solid;    
-  max-width: 100%;
-  max-height: 100%;    
+  width: auto;
+  height: 240px;
+  left: 50%;
+  transform: translateX(-50%);  
 }
 
-/*************************************/
+.gallerywindow .gallerydescription{
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;  
+  margin: 0px;    
+  position: absolute;
+  background-color: black;
+  padding: 3px;
+  border-width: 0px;    
+  border-color: white;
+  color:aliceblue;    
+  border-style: solid;   
+  bottom:10px;
+  left: 50%;
+  transform: translateX(-50%);    
+     
+}
+
+.gallery .gallerybar{
+  position: relative;
+  top:250px;    
+  width: 100%;
+  height: 50px;
+}
+
+.gallerybar .buttonbound{
+  position: absolute;    
+  height:30px;
+  overflow: visible;    
+  left: 50%;
+  transform: translateX(-50%);    
+}
+
+.gallerybar .buttonbound .gallerybutton{  
+  float: left;
+  position: relative;
+  height: 10px;
+  width: 10px;
+  top:7px;
+  margin: 3px;    
+  
+  border-width: 3px;    
+  border-color: white;
+  border-style: solid;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media all and (max-width: 735px) {
+  .aboutmediv .picpart  .gallery{    
+    display: none;
+  }
+}
+/*form*/
+/*
+.sendmemail{
+  clear: both;    
+  z-index:1;    
+  position: relative;
+  width: 100%;    
+  top: 0px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color:aliceblue; 
+     
+}
+
+.sendmemail .maillh1wrapper{
+  position: relative;    
+  top:90px;
+}
+
+.sendmemail .maillh1{
+  font-size: 30px;  
+  position: relative;
+  width: 44%;
+  height: auto;    
+  left: 28%;
+}
+
+.sendmemail hr{    
+  position: relative;    
+  width:100%;    
+  height:2px;
+  border-width:0;   
+  color:cornsilk;
+  background-color:cornsilk;
+  top:65px;      
+}
+
+.sendmemail form{
+  position: relative;
+  top:80px;
+  overflow-x: hidden;   
+}
+
+.sendmemail .mailpadding{
+    position: relative;
+    width:100%;
+    height: 50px;
+    margin-top: 150px;
+}
+*/
+
+.sendmemail{   
+  z-index:3;    
+  position: fixed;
+  width: 70%;
+  left:15%;    
+  bottom: 0px;
+  padding: 10px;    
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color:aliceblue;
+  /*background-color: none;*/
+  transition: all 0.1s linear;      
+}
+/*
+.sendmemail:hover{
+  background-color: rgb(172,207,209);
+}
+*/
+.sendmemail .mailtop{
+  min-height: 35px;    
+}
+
+
+
+.sendmemail .maillh1wrapper{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+    
+}
+
+.sendmemail .maillh1{
+  font-size: 30px;  
+  position: relative;
+  margin: 0px;    
+}
+
+@media all and (max-width: 780px) {
+  .sendmemail .maillh1{    
+    font-size: 20px; 
+  }
+}
+
+.sendmemail .formtriangle{
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  left:50%;   
+  margin-left:-15px;
+  top:42px;    
+}
+
+.sendmemail hr{    
+  position: relative;    
+  width:100%;    
+  height:2px;
+  border-width:0;   
+  color:cornsilk;
+  background-color:cornsilk;
+  margin-bottom: 20px;    
+}
+
+.sendmemail form{
+  position: relative;
+  overflow-x: hidden;
+  /*display: none;*/   
+}
+
+.sendmemail .mailpadding{
+    position: relative;
+    width:100%;
+    height: 50px;
+    /*display: none;*/
+}
+/*
+.sendmemail:hover form{
+  display: block;    
+}
+
+.sendmemail:hover .mailpadding{
+  display: block;    
+}
+*/
+/***************************************/
 .pdfdiv{
   position: relative;
-    top: 100px;  
+  top: 100px;  
   width: 60%;
   left:20%;    
 }
