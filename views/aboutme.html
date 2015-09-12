@@ -16,6 +16,7 @@
       <hr>
       <p class="resumep" ng-click="">resume (pdf)</p>
       <p class="emailp">email: </p>{{email}}
+      <div class="textpartpadding"></div>
   </div>
   <div class="picpart">
     <div class="gallery">
@@ -29,8 +30,7 @@
         </div>     
         </div>          
       </div>    
-    </div> 
-    <!--<img src="./pics/siteuse/withpete.jpg">-->   
+    </div>  
   </div>
 <!--
 <div class="sendmemail">
@@ -60,7 +60,7 @@
          </div> 
        </div>
        <hr>
-       <img class="formtriangle" src="./pics/siteuse/up.png">
+       <img class="formtriangle" src="./pics/siteuse/up.png" ng-click="showform=!showform">
        
      <form action="" method="post" enctype="text/plain" ng-show="showform">
     Name:<br>

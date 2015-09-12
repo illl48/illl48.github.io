@@ -6,6 +6,14 @@
   top: 100px;    
 }
 
+.aboutmediv .textpart .textpartpadding{
+  position: relative;
+  background: red;
+  width: 100%;
+  height:80px;
+  bottom:0px;    
+}
+
 .aboutmediv .textpart{
   z-index: 2;    
   float: left;    
@@ -307,7 +315,8 @@
   position: absolute;
   left:50%;   
   margin-left:-15px;
-  top:42px;    
+  top:42px;
+  cursor: pointer;
 }
 
 .sendmemail hr{    
