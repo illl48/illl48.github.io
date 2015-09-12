@@ -96,6 +96,7 @@
 .overflowhidden{
   position: relative;    
   overflow: hidden;
+  /*width: 100%;*/    
 }
 
 .ptext .techused{

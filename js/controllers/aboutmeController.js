@@ -1,6 +1,6 @@
 app.controller('aboutmeController', ['$scope','$window', function($scope,$window) {
 
-$scope.qoq="no qq"; 
+$scope.email="edwardlai3582@gmail.com"; 
     
 $scope.imgs=[
     {image: './pics/projects/image01.png', description: 'Image 01'},

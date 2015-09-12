@@ -109,19 +109,19 @@ position: relative;
 
 
 #abc {
-width:300px;
-height:240px;
-opacity:.95;
-top:120px;
-right:10px;
+  width:300px;
+  height:240px;
+  opacity:.95;
+  top:120px;
+  right:10px;
 
-position:fixed;
-background-color:white;
-overflow:auto;
+  position:fixed;
+  background-color:white;
+  overflow:auto;
     
   border-style: solid solid solid solid;
-    border-width: 4px;
-    border-radius:13px;    
+  border-width: 4px;
+  border-radius:13px;    
 }
 
 #formfirst{
@@ -137,31 +137,26 @@ overflow:auto;
    
 }
 #formfirst #formtitlediv p{
- position: relative;    
+  position: relative;    
   width: 90%;  
-    left: 13px;  
+  left: 13px;  
   font-family: 'Libre Baskerville', serif;
   font-style: italic;
   font-size: 14px;
 }
 
 #formclosediv {
-    width:50%; 
-    height:40px;
-    float:left;
-  position: relative;    
-      
+  width:50%; 
+  height:40px;
+  float:left;
+  position: relative;          
 }
 
 #formclosediv #close{
-    
-    
   position: relative;  
-    float:right;
+  float:right;
   top:2px; 
-    
 }
-
 
 
 #submitbutton{
@@ -171,16 +166,16 @@ overflow:auto;
   width:50px;    
   cursor: pointer;
     
-    background-color:black;    
+  background-color:black;    
   font-size: 16px;
   color: aliceblue;
   font-weight:bold;
   font-family:monospace;    
   text-transform: uppercase; 
   
-    padding:1px 1px 1px 1px;
-    border: solid black 0px;
-    border-radius:10px;    
+  padding:1px 1px 1px 1px;
+  border: solid black 0px;
+  border-radius:10px;    
 }
 
 #submitbutton:hover {

@@ -22,18 +22,9 @@ body{
    z-index: 0;
 }
 
-
-
-
-
 a{
   text-decoration: none;
 }
-
-
-
-
-
 
 .header {
   position:fixed;  
@@ -137,7 +128,6 @@ a{
 }
 
 
-
 #neversleep{   
       
 }
@@ -145,10 +135,6 @@ a{
 #dilla{   
   
 }
-
-
-
-
 
 .intheheader .menu-container{    
     float: right;
@@ -171,9 +157,7 @@ a{
     list-style:none; 
     position: relative;
     float:right;
-    /**/
     line-height: 100px;
-    /**/
     /*border-right:1px solid #757575;*/ 
     height:75px;
     
@@ -184,34 +168,34 @@ a{
     transition:all .15s linear;    
 }
 
-  #ytab {    
-    width:70px;
-    overflow: hidden;  
-  }
+#ytab {    
+  width:70px;
+  overflow: hidden;  
+}
 
 
-  #ytab img{ 
-    position: relative;
-    top: 3px;  
-    width:70px;
-    height: auto; 
-    transition: all 0.5s ease-in-out;  
-  }
+#ytab img{ 
+  position: relative;
+  top: 3px;  
+  width:70px;
+  height: auto; 
+  transition: all 0.5s ease-in-out;  
+}
 
-  #ytab img:hover{    
-    transform: rotate(360deg);
-  }
+#ytab img:hover{    
+  transform: rotate(360deg);
+}
 
-  #ptab {    
-    width:110px;
-    margin-left: 10px;  
-  }
+#ptab {    
+  width:110px;
+  margin-left: 10px;  
+}
 
-  #atab {    
-    width:90px;
-    margin-left: 10px;
-    margin-right: 10px;  
-  }
+#atab {    
+  width:90px;
+  margin-left: 10px;
+  margin-right: 10px;  
+}
 
 @media all and (max-width: 400px) {
   #ytab {    
@@ -235,22 +219,16 @@ a{
 }
 
 .menu-container .menu .litab a{
-    
     list-style:none; 
     color: white; 
     font-family:arial; 
-    /**************link not only string but whole blcok*/
     display: block;
-    /************************/
-
 }
 
 .menu-container .menu .litab .qq{
-    
     color: white; 
     font-size:20px; 
     font-family:arial; 
-
 }
 
 .menu-container .menu .litab .qq:hover{
@@ -260,12 +238,10 @@ a{
 /** add fo second level menu  **/
 .menu-container .menu li  > ul{ 
     margin-top:-1px; 
-    
-    
-    
     opacity:0 ; 
     height:0px;
 }
+
 .menu-container .menu li > ul li{ 
     list-style:none; 
     margin-left: -39px;
@@ -285,11 +261,13 @@ a{
     /*check this */
     line-height: 25px;
 }
+
 .menu-container .menu li ul  li a{
     margin-top:-88px;
     font-size:0px;
     height:0px;
 }
+
 /** hovering the submenu*/
 .menu-container .menu li:hover > ul {opacity:1; }
 .menu-container .menu li:hover  > ul  li{ 
@@ -300,11 +278,13 @@ a{
     /*padding:5px 5px;*/
     background: black;
 }
+
 .menu-container .menu li:hover  > ul  li a{ 
     margin-top:0px;
     font-size:12px; 
     color: white;
 }
+
 /**Apply extra style for submenu*/
 .menu-container .menu li:hover  > ul  li:hover a{ 
     color:black; 
@@ -312,6 +292,7 @@ a{
     font-size:20px;
     line-height:35px; 
 }
+
 .menu-container .menu li:hover  > ul  li:hover{  
     background: #76D6C0;
     
@@ -320,6 +301,7 @@ a{
     
 }
 
+/******************************************************************/
 body .main {
     position: relative;
     top: 80px;
@@ -327,10 +309,10 @@ body .main {
     padding: 40px 0;
 }
 
-body  .main .container {
+body .main .container {
     position: absolute;
     height: 100%;
     top: 0px;
 	width: 100%;
 }
-/******************************************************************/
+
