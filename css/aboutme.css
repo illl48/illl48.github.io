@@ -8,13 +8,12 @@
 }
 @media all and (max-height: 530px) {
   .aboutmediv {    
-    top:5px;
+    top:20px;
   }
 }
 .aboutmediv .textpart .textpartpadding{
   position: relative;
-  /*background: red;*/
-  opacity: 0.5;    
+  /*opacity: 0.5;*/    
   width: 100%;
   height:80px;
   bottom:0px;    
@@ -233,56 +232,12 @@
     display: none;
   }
 }
+
+
+
+
+/****************************************/
 /*form*/
-/*
-.sendmemail{
-  clear: both;    
-  z-index:1;    
-  position: relative;
-  width: 100%;    
-  top: 0px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color:aliceblue; 
-     
-}
-
-.sendmemail .maillh1wrapper{
-  position: relative;    
-  top:90px;
-}
-
-.sendmemail .maillh1{
-  font-size: 30px;  
-  position: relative;
-  width: 44%;
-  height: auto;    
-  left: 28%;
-}
-
-.sendmemail hr{    
-  position: relative;    
-  width:100%;    
-  height:2px;
-  border-width:0;   
-  color:cornsilk;
-  background-color:cornsilk;
-  top:65px;      
-}
-
-.sendmemail form{
-  position: relative;
-  top:80px;
-  overflow-x: hidden;   
-}
-
-.sendmemail .mailpadding{
-    position: relative;
-    width:100%;
-    height: 50px;
-    margin-top: 150px;
-}
-*/
-
 .sendmemail{   
   z-index:0;    
   position: fixed;
@@ -292,14 +247,9 @@
   padding: 10px;    
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color:aliceblue;
-  /*background-color: none;*/
   transition: all 0.1s linear;      
 }
-/*
-.sendmemail:hover{
-  background-color: rgb(172,207,209);
-}
-*/
+
 .sendmemail .mailtop{
   min-height: 35px;    
 }
@@ -348,25 +298,15 @@
 
 .sendmemail form{
   position: relative;
-  overflow-x: hidden;
-  /*display: none;*/   
+  overflow-x: hidden; 
 }
 
 .sendmemail .mailpadding{
     position: relative;
     width:100%;
     height: 50px;
-    /*display: none;*/
-}
-/*
-.sendmemail:hover form{
-  display: block;    
 }
 
-.sendmemail:hover .mailpadding{
-  display: block;    
-}
-*/
 /***************************************/
 .pdfdiv{
   position: relative;
@@ -374,4 +314,112 @@
   width: 60%;
   left:20%;    
 }
+
+/*******************************************************************/
+/* entire container, keeps perspective */
+.vflip-container {
+	perspective: 100;
+     height: 20px;
+  width: 20px;
+  position: absolute;
+  left:50%;   
+  margin-left:-15px;
+  top:42px;
+  cursor: pointer;
+}
+
+.vflip-container.hover .vflipper {
+    transform: rotateX(-180deg);
+}
+
+
+
+/* flip speed goes here */
+.vflipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+    transform-origin: 100% 10px;
+}
+
+
+
+.vflipper img{
+height: 20px;
+  width: 20px;
+}
+
+/* hide back of pane during swap */
+.vfront{
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 20px;
+	height: 20px;
+    
+    z-index: 4;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+.vback {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+    width: 20px;
+	height: 20px;
+    
+    /*transform: rotateY(180deg);*/
+    transform: rotateX(180deg);
+}
+
+/********8horizon******************************/
+/* entire container, keeps perspective */
+.gallerywindow {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	/*.gallerywindow:hover .flipper,*/ .gallerywindow.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+ .front, .back {
+	width: 100%;
+  min-width: 335px;
+  height:250px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 3;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
 

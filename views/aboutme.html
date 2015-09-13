@@ -20,48 +20,60 @@
   </div>
   <div class="picpart">
     <div class="gallery">
+      <div class="gallerywindow" id="fml">
+      <div class="flipper">
+			<div class="front" >
+			<img ng-src="{{frontp}}">
+			<p class="gallerydescription">{{frontdescription}}</p>
+			</div>
+			<div class="back" >
+			<img ng-src="{{backp}}">
+			<p class="gallerydescription">{{backdescription}}</p>
+			</div>
+		</div>
+    </div>
+     <!--
       <div class="gallerywindow" ng-repeat="image in gallery" ng-show="selected.value== $index">
         <img src="{{image.image}}">
         <p class="gallerydescription">{{image.description}}</p>    
       </div>
+      -->
       <div class="gallerybar">
         <div class="buttonbound">    
-          <div class="gallerybutton" ng-repeat="image in gallery" ng-click="selected.value= $index" ng-style="{ 'background-color' : (selected.value== $index) ? 'black' : 'grey' }">
+          <div class="gallerybutton" ng-repeat="image in gallery" ng-click="selected.value= $index" ng-style="{ 'background-color' : (selected.value== $index) ? 'black' : 'grey' }" change-directive="{{$index}}">
         </div>     
         </div>          
       </div>    
     </div>  
-  </div>
-<!--
-<div class="sendmemail">
-     <div class="maillh1wrapper">
-     <p class="maillh1">SEND ME A MESSAGE</p>
-     </div> 
-     <hr>
-     <form action="" method="post" enctype="text/plain">
-    Name:<br>
-    <input type="text" name="name" value="your name"><br>
-    email:<br>
-    <input type="text" name="mail" value="your email"><br>
-    Message:<br>
-    <input type="text" name="comment" value="your comment" size="50"><br><br>
-    <input type="submit" value="Send">
-    <input type="reset" value="Reset">
-    </form>
-    <div class="mailpadding"></div>   
-</div>  
--->          
+  </div>        
 </div>
 
 <div class="sendmemail" ng-style="{ 'background-color' : showform ? 'rgb(172,207,209)' : 'none', 'z-index':  showform ?'3':'1'}">
        <div class="mailtop">
-         <div class="maillh1wrapper" ng-click="showform=!showform">
+         <div class="maillh1wrapper" ng-click="showform=!showform;" onclick="document.querySelector('#flipqq').classList.toggle('hover');">
            <p class="maillh1">send me a mail</p>
          </div> 
        </div>
        <hr>
-       <img class="formtriangle" src="./pics/siteuse/up.png" ng-click="showform=!showform">
+       <!--<img class="formtriangle" src="./pics/siteuse/up.png" ng-click="showform=!showform">-->
+       <!---------------------------------------------------------------------------------------->
+       <div class="vflip-container" id="flipqq" onclick="document.querySelector('#flipqq').classList.toggle('hover');" ng-click="showform=!showform" >
+            <div class="vflipper" >
+                <div class="vfront">
+                    <!-- front content -->
+                    <img  src="./pics/siteuse/up.png" >
+                </div>
+                <div class="vback">
+                    <!-- back content -->
+                    <img  src="./pics/siteuse/down.png" >
+                </div>
+            </div>
+       </div>
        
+       
+       <!--ng-class="{showform?after-flip-container:before-flip-container}"-->
+       
+       <!---------------------------------------------------------------------------------------->
      <form action="" method="post" enctype="text/plain" ng-show="showform">
     Name:<br>
     <input type="text" name="name" value="your name"><br>
