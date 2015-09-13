@@ -1,3 +1,10 @@
+#aboutmewrap{
+  
+  width: 100%;
+  height: 100%; 
+    
+}
+
 .aboutmediv{   
   position: relative;
   width: 60%;
@@ -238,7 +245,8 @@
 
 /****************************************/
 /*form*/
-.sendmemail{   
+.sendmemail{
+      
   z-index:0;    
   position: fixed;
   width: 70%;
@@ -247,7 +255,9 @@
   padding: 10px;    
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color:aliceblue;
-  transition: all 0.1s linear;      
+  transition: all 0.1s linear;
+  /*height:2000px;*/
+    
 }
 
 .sendmemail .mailtop{
@@ -308,12 +318,7 @@
 }
 
 /***************************************/
-.pdfdiv{
-  position: relative;
-  top: 100px;  
-  width: 60%;
-  left:20%;    
-}
+
 
 /*******************************************************************/
 /* entire container, keeps perspective */
@@ -379,7 +384,7 @@ height: 20px;
 /********8horizon******************************/
 /* entire container, keeps perspective */
 .gallerywindow {
-	perspective: 1000;
+	perspective: 500;
 }
 	/* flip the pane when hovered */
 	/*.gallerywindow:hover .flipper,*/ .gallerywindow.hover .flipper {

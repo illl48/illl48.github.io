@@ -1,4 +1,9 @@
-<div class="aboutmediv">
+<div id="aboutmewrap">
+ 
+
+ 
+ 
+ <div class="aboutmediv">
   <div class="textpart">
       <div class="bigheader">
         <p>Edward Lai</p>
@@ -14,7 +19,7 @@
         <h1>Currently looking for an entry level position in the area of software/web development.</h1>
       </div>
       <hr>
-      <p class="resumep" ng-click="">resume (pdf)</p>
+      <p class="resumep" onclick="opentheater()">resume (pdf)</p>
       <span class="emailp">email: </span><span class="emailpa">{{email}}</span>
       <div class="textpartpadding"></div>
   </div>
@@ -88,9 +93,15 @@
 </div>  
 
 
-<!--
-<div class="pdfdiv">
-<embed src="./pics/siteuse/resume_EDL.pdf" width="100%">
 </div>
--->
+
+
+
+<div class="pdfdiv" id="pdfmodal">
+  <div class="pdfwrapper">
+     <img src="./pics/siteuse/cancel-circle.png" onclick="closetheater()">
+    <object data="./pics/siteuse/resume_EDL.pdf" type="application/pdf" width="800px" height="1110px"></object>
+  </div>
+</div>
+
 

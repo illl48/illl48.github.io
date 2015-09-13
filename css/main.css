@@ -18,8 +18,8 @@ body{
     padding: 0;
     border: 0;
  background-color:#ECD8AC;
-   
    z-index: 0;
+   overflow-y: auto;    
 }
 
 a{
@@ -34,7 +34,7 @@ a{
   height:75px;
   top: 0px;
   
-  z-index: 100;
+  z-index: 50;
   
   display: inline-block;  
 }

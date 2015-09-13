@@ -1,4 +1,4 @@
-app.controller('aboutmeController', ['$scope','$window', function($scope,$window) {
+app.controller('aboutmeController', ['$scope','$window', '$document',function($scope,$window,$document) {
 
 $scope.linkedinlink='https://www.linkedin.com/in/edlai48';    
 $scope.email='edwardlai3582@gmail.com'; 
@@ -30,14 +30,14 @@ $scope.$on('myApp:change', function (event, data) {
           $scope.backdescription=$scope.gallery[data].description;
           $scope.currentside=1;
           $scope.currentnumber=data;     
-          document.querySelector('#fml').classList.toggle('hover'); 
+          $document[0].querySelector('#fml').classList.toggle('hover'); 
         }
         else{
           $scope.frontp=$scope.gallery[data].image;
           $scope.frontdescription=$scope.gallery[data].description;
           $scope.currentside=0;
           $scope.currentnumber=data;     
-          document.querySelector('#fml').classList.toggle('hover'); 
+          $document[0].querySelector('#fml').classList.toggle('hover'); 
         }     
       }); 
     } 
