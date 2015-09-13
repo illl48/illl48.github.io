@@ -9,6 +9,7 @@
    <link href='https://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
 
    <link href="css/main.css" rel="stylesheet" />
+   <link href="css/firstpage.css" rel="stylesheet" />
    <link href="css/yesterday.css" rel="stylesheet" />
    <link href="css/projects.css" rel="stylesheet" />
    <link href="css/aboutme.css" rel="stylesheet" />
@@ -25,12 +26,12 @@
 
     <div class="header" id="headithard" ng-controller="headerController">
       <div class="intheheader" >
-          <a href='/' id='myHead'>
+          <a href='#/firstpage' id='myHead'>
             <img src="./pics/siteuse/me.jpg" ng-mouseover="dillashow()" ng-mouseleave="dillahide()">
           </a>          
           <div id='headerh1div'>
            <div>
-            <a href='/'>
+            <a href='#/firstpage'>
              <h1 ng-mouseover="neversleepshow()" ng-mouseleave="neversleephide()"> {{myname}}</h1>
             </a>
            </div>
@@ -82,6 +83,7 @@
 
     <!-- Controllers-->
     <script src="js/controllers/headerController.js"></script> 
+    <script src="js/controllers/firstpageController.js"></script> 
     <script src="js/controllers/yesterdayController.js"></script>
     <script src="js/controllers/projectsController.js"></script>
     <script src="js/controllers/aboutmeController.js"></script>

@@ -16,9 +16,9 @@
 .theater{
   position: absolute;
   top: -40px;  
-  width: 80%;
+  width: 64%;
   height: 100%;    
-  left:10%;
+  left:18%;
    z-index: 101;
     display: block;
 }
