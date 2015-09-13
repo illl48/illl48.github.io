@@ -18,30 +18,26 @@ app.directive("checkposition", function($window) {
             if(ptop<wintop&&pbottom>wintop&&pbottom<winbottom){
                 yd=wintop-ptop-15;  
                 console.log('yd='+yd); 
-                ///*
+                //
                 scope.idd = setInterval(function(){
                   if(yd<=0) clearInterval(scope.idd);
                   $window.scrollBy(0, -10);
                     console.log('scroll down');
                   yd-=10;
                 },20);
-                //*/
-                //$window.scrollBy(0, -1*yd);
               }
               
               if(ptop<winbottom&&pbottom>winbottom&&ptop>wintop){
                 
                 yu=pbottom-winbottom-15;  
                 console.log('yu='+yu); 
-                ///*  
+                //  
                 scope.idu = setInterval(function(){
                   if(yu<=0) clearInterval(scope.idu);
                   $window.scrollBy(0, 10);
                     console.log('scroll up ');
                   yu-=10;
                 },20);
-                //*/
-                 //$window.scrollBy(0, yu); 
               }   
           });
           element.bind('mouseleave',function() {

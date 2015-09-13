@@ -1,4 +1,4 @@
-app.directive('slide', function ($window,$compile) {
+app.directive('slide', function () {
   return {
       restrict: 'E',
       template:'<div class="slidewrapper">'+

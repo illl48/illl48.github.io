@@ -6,7 +6,7 @@
  <div class="aboutmediv">
   <div class="textpart">
       <div class="bigheader">
-        <p>Edward Lai</p>
+        <p>{{myName}}</p>
         <div class="linkedin">
           <img class="lw" src="./pics/siteuse/linkedin_w.png">    
           <a   class="lb" target="_blank"target="_blank" href="{{linkedinlink}}">
@@ -16,10 +16,10 @@
       </div>    
   
       <div class="notep">
-        <h1>Currently looking for an entry level position in the area of software/web development.</h1>
+        <h1>{{myNote}}</h1>
       </div>
       <hr>
-      <p class="resumep" onclick="opentheater()">resume (pdf)</p>
+      <p class="resumep" ng-click="opentheater()">resume (pdf)</p>
       <span class="emailp">email: </span><span class="emailpa">{{email}}</span>
       <div class="textpartpadding"></div>
   </div>
@@ -92,16 +92,11 @@
     <div class="mailpadding" ng-show="showform"></div>   
 </div>  
 
-
 </div>
 
+<theater pdfsrc="{{resume}}"></theater>
 
 
-<div class="pdfdiv" id="pdfmodal">
-  <div class="pdfwrapper">
-     <img src="./pics/siteuse/cancel-circle.png" onclick="closetheater()">
-    <object data="./pics/siteuse/resume_EDL.pdf" type="application/pdf" width="800px" height="1110px"></object>
-  </div>
-</div>
+
 
 
