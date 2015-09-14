@@ -1,7 +1,17 @@
 .firstpagewrapper{
-  position: relative;
-  width:100%;
-  height:100%;  
+  position: absolute;
+  widows: 100%;    
+  height: 100%;    
+  z-index: 2;    
+}
+
+#city{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom:105px;  
+  background-image: url("../pics/siteuse/city.png");
+  z-index: 2;
 }
 
 #ground{
@@ -11,7 +21,6 @@
   bottom: 0;   
   background-image: url("../pics/siteuse/floor.png");
   z-index: 3;
-  overflow: hidden;    
 }
 
 #megaman{
@@ -20,3 +29,60 @@
   left: 50px;
   z-index: 4;    
 }
+/*
+#ground{
+  position: fixed;
+  width: 100%;
+  height: 125px;
+  bottom: 0;   
+  background: url("../pics/siteuse/floor.png") repeat;
+  z-index: 3;
+  overflow: hidden;  
+    -webkit-animation: loader 5s steps(100) infinite;
+    -moz-animation: loader 5s steps(100) infinite;
+    -ms-animation: loader 5s steps(100) infinite;
+    -o-animation: loader 5s steps(100) infinite;
+    animation: loader 5s steps(100) infinite;
+}
+
+@-webkit-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -356px 0;
+  }
+}
+@-moz-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -356px 0;
+  }
+}
+@-ms-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -356px 0;
+  }
+}
+@-o-keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -356px 0;
+  }
+}
+@keyframes loader {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: -356px 0;
+  }
+}
+*/
