@@ -9,5 +9,5 @@ function megamanscript(){
     
 };
 
-window.onload = megamanscript;
+//window.onload = megamanscript;
 
