@@ -1,4 +1,4 @@
-app.directive('theater', function ($window,$document) {
+app.directive('theater', function ($window) {
   return {
       restrict: 'E',
       template:'<div class="pdfdiv" id="pdfmodal">'+
@@ -54,7 +54,7 @@ app.directive('theater', function ($window,$document) {
 
 
               close = function () {
-                $backdrop.remove();
+                  $backdrop.remove();
                   $page.css('overflowY', '');
                   $page.css('position', '');
                   $page.css('top ', '');
