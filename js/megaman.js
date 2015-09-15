@@ -28,7 +28,7 @@ function cbgscroll() {
     
 };
 
-window.onload = megamanscript;
+//window.onload = megamanscript;
 
 
 	
