@@ -109,10 +109,10 @@ position: relative;
 
 
 #abc {
-  width:300px;
-  height:240px;
+  width:250px;
+  height:265px;
   opacity:.95;
-  top:120px;
+  top:110px;
   right:10px;
 
   position:fixed;
@@ -132,7 +132,7 @@ position: relative;
 #formfirst #formtitlediv{
     float:left;
     height:40px;
- width:49%;    
+ width:60%;    
  position: relative;
    
 }
@@ -146,8 +146,8 @@ position: relative;
 }
 
 #formclosediv {
-  width:50%; 
-  height:40px;
+  width:40%; 
+  height:55px;
   float:left;
   position: relative;          
 }
@@ -155,15 +155,32 @@ position: relative;
 #formclosediv #close{
   position: relative;  
   float:right;
-  top:2px; 
+  top:2px;
+  right:2px;    
+}
+
+#formindiv input, #formindiv textarea{
+  position: relative;
+    left:10px;
+    font-family:sans-serif;
+    width:170px;
+    margin-bottom: 6px;
+}
+
+#formindiv #link{
+  margin-top:7px;
+  height: 34px;    
 }
 
 
-#submitbutton{
+
+#formindiv #submitbutton{
   position: relative;  
     
   text-align: center;    
-  width:50px;    
+  width:50px;
+  left:10px;    
+  margin-top: 7px;    
   cursor: pointer;
     
   background-color:black;    

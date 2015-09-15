@@ -3,7 +3,7 @@ app.directive('theater', function ($window) {
       restrict: 'E',
       template:'<div class="pdfdiv" id="pdfmodal">'+
                  '<div class="pdfwrapper">'+ 
-                   '<img src="./pics/siteuse/cancel-circle.png" ng-click="closetheater()">'+
+                   '<img src="./images/siteuse/cancel-circle.png" ng-click="closetheater()">'+
                    '<object data="{{pdfsrc}}" type="application/pdf" width="800px" height="1110px"></object>'+
                   '</div>'+
                 '</div>',

@@ -2,7 +2,7 @@ app.directive('slide', function () {
   return {
       restrict: 'E',
       template:'<div class="slidewrapper">'+
-                '<img src="./pics/siteuse/right.png" class="prevB" id="prev" ng-click="onClickPrev()">'+ 
+                '<img src="./images/siteuse/right.png" class="prevB" id="prev" ng-click="onClickPrev()">'+ 
                 '<div class="swindow">'+
                  '<div class="party" id="partA">'+
                    '<div class="imgwrapper" ng-repeat="pic in source">'+
@@ -15,7 +15,7 @@ app.directive('slide', function () {
                    '</div>'+    
                  '</div>'+
                '</div>'+
-               '<img src="./pics/siteuse/left.png" class="nextB" id="next" ng-click="onClickNext()">'+
+               '<img src="./images/siteuse/left.png" class="nextB" id="next" ng-click="onClickNext()">'+
                '</div>',
       scope: {
         source:   '=',

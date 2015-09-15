@@ -4,12 +4,12 @@ $scope.myName='Edward Lai';
 $scope.myNote='Currently looking for an entry level position in the area of software/web development.';    
 $scope.linkedinlink='https://www.linkedin.com/in/edlai48';    
 $scope.email='edwardlai3582@gmail.com'; 
-$scope.resume='./pics/siteuse/resume_EDL.pdf';
+$scope.resume='./images/siteuse/resume_EDL.pdf';
     
 $scope.gallery=[
-    {image: './pics/siteuse/withpete.jpg', description: '# Pete Rock & me'},
-    {image: './pics/siteuse/NABLER.jpg', description: '# Toy I got recently!'},
-    {image: './pics/siteuse/mocha.jpg', description: '# Mocha lol'},
+    {image: './images/siteuse/withpete.jpg', description: '# Pete Rock & me'},
+    {image: './images/siteuse/NABLER.jpg', description: '# Toy I got recently!'},
+    {image: './images/siteuse/mocha.jpg', description: '# Mocha lol'},
 ];
 
 $scope.imagenumber=$scope.gallery.length;    

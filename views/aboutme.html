@@ -8,9 +8,9 @@
       <div class="bigheader">
         <p>{{myName}}</p>
         <div class="linkedin">
-          <img class="lw" src="./pics/siteuse/linkedin_w.png">    
+          <img class="lw" src="./images/siteuse/linkedin_w.png">    
           <a   class="lb" target="_blank"target="_blank" href="{{linkedinlink}}">
-            <img src="./pics/siteuse/linkedin.png">
+            <img src="./images/siteuse/linkedin.png">
           </a>  
         </div>
       </div>    
@@ -66,11 +66,11 @@
             <div class="vflipper" >
                 <div class="vfront">
                     <!-- front content -->
-                    <img  src="./pics/siteuse/up.png" >
+                    <img  src="./images/siteuse/up.png" >
                 </div>
                 <div class="vback">
                     <!-- back content -->
-                    <img  src="./pics/siteuse/down.png" >
+                    <img  src="./images/siteuse/down.png" >
                 </div>
             </div>
        </div>
@@ -79,15 +79,15 @@
        <!--ng-class="{showform?after-flip-container:before-flip-container}"-->
        
        <!---------------------------------------------------------------------------------------->
-     <form action="" method="post" enctype="text/plain" ng-show="showform">
+     <form name="mailform" id="mailform" ng-submit="sendmail()" ng-show="showform" ng-cloak novalidate>
     Name:<br>
-    <input type="text" name="name" value="your name"><br>
+    <input type="text" ng-model="name" name="name" placeholder="your name"><br>
     email:<br>
-    <input type="text" name="mail" value="your email"><br>
+    <input type="text" ng-model="mailaddress" name="mailaddress" placeholder="your email"><br>
     Message:<br>
-    <input type="text" name="message" value="your message" size="50"><br><br>
-    <input type="submit" value="Send">
-    <input type="reset" value="Reset">
+    <textarea type="text" ng-model="message" name="message" placeholder="your message" ></textarea><br><br>
+    <input id="mailsubmit" type="submit" value="Send">
+    <!--<input type="reset" value="Reset">-->
     </form>
     <div class="mailpadding" ng-show="showform"></div>   
 </div>  

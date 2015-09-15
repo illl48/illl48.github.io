@@ -9,9 +9,9 @@ app.factory("pFac", function(){
             {d:"Used d3.js to display the covers' information."}
              ],
         imgs:[
-                {image: './pics/projects/y1.png', description: 'Image 01'},
-                {image: './pics/projects/y2.png', description: 'Image 01'},
-                {image: './pics/projects/y3.png', description: 'Image 01'},
+                {image: './images/projects/y1.png', description: 'Image 01'},
+                {image: './images/projects/y2.png', description: 'Image 01'},
+                {image: './images/projects/y3.png', description: 'Image 01'},
              ]  
       },
       {
@@ -22,11 +22,11 @@ app.factory("pFac", function(){
                 {d:"Tile maps provided by Open Street Map API, list of restaurants provided by Yelp API, routing services provided by Google Directions."}
              ],
         imgs:[
-                {image: './pics/projects/image01.png', description: 'Image 01'},
-                {image: './pics/projects/image02.png', description: 'Image 02'},
-                {image: './pics/projects/image03.png', description: 'Image 03'},
-                {image: './pics/projects/image04.png', description: 'Image 04'},
-                {image: './pics/projects/image05.png', description: 'Image 05'}
+                {image: './images/projects/image01.png', description: 'Image 01'},
+                {image: './images/projects/image02.png', description: 'Image 02'},
+                {image: './images/projects/image03.png', description: 'Image 03'},
+                {image: './images/projects/image04.png', description: 'Image 04'},
+                {image: './images/projects/image05.png', description: 'Image 05'}
              ]  
       },
       {
@@ -37,11 +37,11 @@ app.factory("pFac", function(){
             {d:"All the data are stored in Yahoo web hosting MySQL database."}
              ],
         imgs:[
-                {image: './pics/projects/grad1.png', description: 'Image 01'},
-                {image: './pics/projects/grad2.png', description: 'Image 02'},
-                {image: './pics/projects/grad3.png', description: 'Image 03'},
-                {image: './pics/projects/grad4.png', description: 'Image 04'},
-                {image: './pics/projects/grad5.png', description: 'Image 05'},
+                {image: './images/projects/grad1.png', description: 'Image 01'},
+                {image: './images/projects/grad2.png', description: 'Image 02'},
+                {image: './images/projects/grad3.png', description: 'Image 03'},
+                {image: './images/projects/grad4.png', description: 'Image 04'},
+                {image: './images/projects/grad5.png', description: 'Image 05'},
              ]  
       },
       {
@@ -52,12 +52,12 @@ app.factory("pFac", function(){
                 {d:"Built a Java client socket program that allows user to upload pictures to the web server backend, preview/download/delete the pictures stored in the website."},
              ],
         imgs:[
-                {image: './pics/projects/2071.png', description: 'Image 01'},
-                {image: './pics/projects/2072.png', description: 'Image 02'},
-                {image: './pics/projects/2073.png', description: 'Image 03'},
-                {image: './pics/projects/2074.png', description: 'Image 04'},
-                {image: './pics/projects/2075.png', description: 'Image 05'},
-                {image: './pics/projects/2076.png', description: 'Image 06'},
+                {image: './images/projects/2071.png', description: 'Image 01'},
+                {image: './images/projects/2072.png', description: 'Image 02'},
+                {image: './images/projects/2073.png', description: 'Image 03'},
+                {image: './images/projects/2074.png', description: 'Image 04'},
+                {image: './images/projects/2075.png', description: 'Image 05'},
+                {image: './images/projects/2076.png', description: 'Image 06'},
              ]  
       },
       {
@@ -67,7 +67,7 @@ app.factory("pFac", function(){
                 {d:"Developed a file replication daemon that can monitor text file activity in the client side and update any changes like creation, deletion and modification to the server through socket."},
              ],
         imgs:[
-                {image: './pics/projects/2081.png', description: 'Image 01'},
+                {image: './images/projects/2081.png', description: 'Image 01'},
              ]  
       },
   ]; 

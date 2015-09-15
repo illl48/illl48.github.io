@@ -34,7 +34,7 @@ $scope.addCover=function() {
   starttime: $scope.starttime,
   endtime: $scope.endtime,
   link: $scope.link,
-  pic: './pics/siteuse/me.jpg'                     
+  pic: './images/siteuse/me.jpg'                     
   });
   //    
   $scope.div_hide();
@@ -44,7 +44,7 @@ $scope.addCover=function() {
   $scope.play=false;
   $scope.controlpic=0;
   $scope.availpics=  [
-    "../pics/siteuse/play-circled.png", "../pics/siteuse/pause-circled.png", "../pics/siteuse/replay-circled.png" 
+    "../images/siteuse/play-circled.png", "../images/siteuse/pause-circled.png", "../images/siteuse/replay-circled.png" 
   ];    
   $scope.playpause=function(){
     if($scope.play) {
