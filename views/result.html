@@ -1,0 +1,26 @@
+<div id="resultWrapper">
+    
+<div id="selectWrapper">
+    <button class="select" ng-click="search('hotels')">HOTEL</button>
+    <button class="select" ng-click="search('restaurants')">FOOD</button>
+    <button class="select" ng-click="search('bars')">BAR</button>
+</div>
+
+
+
+<div id="mapWrapper" >
+  <ng-map zoom="14" center="{{dest['latlng']}}" on-center-changed="" style="height:100%">
+    <custom-marker ng-repeat="p in business track by $index"
+      position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
+      <div class="tag">
+        {{p.name}}: {{p['location']['coordinate']['latitude']}}, {{p['location']['coordinate']['longitude']}}
+      </div>
+    </custom-marker>
+    <custom-marker id="dest" position="{{dest['latlng']}}">
+        <img id="targetImg" src="./target.png"/>
+    </custom-marker>
+  </ng-map>
+</div>
+
+
+</div>

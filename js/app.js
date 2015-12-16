@@ -1,14 +1,22 @@
+var app = angular.module('MyApp', ['ui.router','ngMap','ngAutocomplete']);
 
-var app = angular.module('MyApp', ['ngRoute','ngMessages']);
+app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-app.config(function ($routeProvider) {
-  $routeProvider
-    .when('/firstpage', {
-      controller: "firstpageController",
-      templateUrl: "views/firstpage.html"
+    $stateProvider
+    .state('firstpage', {
+        url: '/firstpage',
+        templateUrl: 'views/firstpage.html',
+        controller: 'firstpageController',
     })
-    .otherwise({
-      redirectTo: '/firstpage'
+    .state('result', {
+        url: '/result',
+        templateUrl: './views/result.html',
+        controller: 'resultController',
     });
-});
+
+    $urlRouterProvider.otherwise('firstpage');
+    
+}]);
+
+
 
