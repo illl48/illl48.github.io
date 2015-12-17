@@ -8,8 +8,7 @@ html,body{
 }
 
 nav{
-
-    background-color: #62C3CC;
+    background-color: #B03774;
     font-family: 'Playfair Display SC', serif;
     color: white;
     z-index: 4;
@@ -27,6 +26,7 @@ nav h1{
 
 #searchBar{
     display: inline;
+    transition: all 1s;
 }
 
 #showButton{
@@ -35,8 +35,40 @@ nav h1{
     float: right;
 }
 
-#searchForm{
+#searchFormWrapper{
+    width: 100%;
     clear: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #259291;
+}
+
+#searchForm{
+    position: relative;
+    width: 90%;
+    left:5%;
+}
+
+#inputText{
+    width: 70%;
+}
+
+#searchB{
+    cursor: pointer;
+    background-color: #585858;
+    border-width: 0;
+    border-radius: 10px;
+    color:white;
+    padding: 5px 10px 5px 10px;
+}
+
+#searchB:hover{
+    background-color: black;    
+}
+
+#searchB:active{
+    position: relative;
+    top:1px;
 }
 
 #container{
@@ -46,6 +78,26 @@ nav h1{
     height: calc(100% - 52px);
 }
 
+#firstWrapper{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+}
+
+#first{
+    position: relative;
+    top:150px;
+    display:inline-flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+#first div{
+    margin-top:0;
+    margin-right: 5px;
+}
+
 #resultWrapper{
     position: absolute;
     width: 100%;
@@ -53,50 +105,253 @@ nav h1{
 }
 
 #selectWrapper{
-		display:inline-flex;
-		width:100%;
+    display:inline-flex;
+	width:100%;
+    top:50px;
     height: 40px;
-    justify-content:space-between;
+    justify-content:space-around;
+    align-items:center;
+    z-index: 3;
+    position: fixed;
+    background-color: #259291;
 }
 
 .select{
     display: inline-block;
-    width:33%;
+    width:32%;
+    height: 30px;
     background: black;
     color: aliceblue;
     text-align:center;
     cursor: pointer;
+    border-width: 0;
+    border-radius: 10px;
+}
+
+.select:active{
+    position: relative;
+    top:1px;
+}
+
+#contentWrapper{
+    position: relative;
+    width:100%;
+    height: 100%;
 }
 
 #mapWrapper{
-    position: relative;
+    position: fixed;
     width: 100%;
-    height: calc(100% - 40px);
+    top:90px;
+    height: calc(100% - 90px);
+    z-index: 1;
 }
 
 .tag{
-    background-color: aliceblue;
+    background-color: #B03774;
+    color: white;
 }
 
 #targetImg{
-    width: 20px;
+    width: 35px;
     height: auto;
 }
 
-/************************************/
-      #map {
-        height: 100%;
-      }
-#floating-panel {
-  position: absolute;
-  top: 10px;
-  left: 25%;
-  z-index: 5;
-  background-color: #fff;
-  padding: 5px;
-  border: 1px solid #999;
-  text-align: center;
-  font-family: 'Roboto','sans-serif';
-  line-height: 30px;
-  padding-left: 10px;
+#centerButton{
+    position: fixed;
+    top:110px;
+    right:20px;
+    z-index: 2;    
+}
+
+#centerButton img{
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+#listWrapper{
+    position: absolute;
+    top:90px;
+    z-index: 2;
+    margin-left: 2%;
+    width:30%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.list{
+    margin-bottom: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+.list.closed{
+    background-color: grey;
+}
+
+.up{
+    width: 100%;
+    display:inline-flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.listIndex{
+    width:20%;
+    text-align: center;
+    color: #259291;
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.upRight{
+    width:80%;
+    font-family: 'Bree Serif', serif;
+    padding-left: 2%;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.listClosed{
+    color:red;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.line{
+    height: 1px;
+    border-top: 2px solid black;
+    margin-bottom: 4px;
+}
+
+.mid{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    display:inline-flex;
+    flex-direction:row;
+    align-items:center;
+}
+
+.listImgWrapper{
+    border-radius: 0%;
+    overflow: hidden;
+}
+
+.listAdd{
+    margin-left: 16px;
+}
+
+.down{
+    position: relative;
+    left: 5%;
+    width: 90%;
+    display:inline-flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+}
+
+a{ 
+    text-decoration:none;
+}
+
+.aWrapper{
+    background-color: black;
+    padding: 2px 4px 2px 4px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    text-align: center;
+    color: aliceblue;
+}
+
+
+@media all and (max-width: 956px) {
+    .down{
+        display: block;
+    }
+    
+    .aWrapper{
+        margin-top: 5px;
+    }
+}
+
+@media all and (max-width: 583px) {
+    #mapWrapper{
+        position: fixed;
+        width: 100%;
+        top:90px;
+        height: 200px;
+        z-index: 2;
+    }
+
+    #centerButton{
+        top:100px;
+        right:10px;
+        z-index: 3;    
+    }    
+
+    #listWrapper{
+        position: absolute;
+        top:240px;
+        z-index: 1;
+        width:100%;
+        margin-left: 0;
+        background-color: #259291;
+    }  
+}
+/****************************************/
+.buttonBack{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color:#259291;
+    margin-top: 6px;
+    border-radius: 50%;
+}
+
+.buttonBack.showForm{
+    top:30px;
+}
+
+.buttonLeft{
+    position: absolute;
+    top:6px;
+    left:6px;
+    width: 12px;
+    height:12px;
+    border-radius: 50%;
+    border-width:4px;
+    border-style: solid;
+    border-color: white;
+    transition: all 0.2s;
+}
+
+.buttonLeft.showForm{
+    top: 18px;
+    left:6px;
+    width:28px;
+    height:4px;
+    border-radius: 0;
+    border-width: 0;
+    background-color: white;
+    transform: rotate(135deg);
+}
+
+.buttonRight{
+    position: absolute;
+    top: 24px;
+    left:21px;
+    width:13px;
+    height:4px;
+    background-color: white;
+    transform: rotate(45deg);
+    transition: all 0.2s;
+}
+
+.buttonRight.showForm{
+    top: 18px;
+    left:6px;
+    width:28px;
+    height:4px;
 }

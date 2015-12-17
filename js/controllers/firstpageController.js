@@ -1,5 +1,4 @@
 app.controller('firstpageController', ['$scope', function($scope) {
-
-    $scope.welcome = "press search to start";
-
+    $scope.prewelcome = "Press";
+    $scope.postwelcome = "to start.";
 }]);

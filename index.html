@@ -3,6 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width"/>     
     <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:400,700' rel='stylesheet' type='text/css'/>
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
     <link href="css/main.css" rel="stylesheet" />
     <script src="https://maps.google.com/maps/api/js?libraries=places" defer></script>
     <script src="js/vendor/angular.min.js"></script>
@@ -14,14 +15,17 @@
     <nav>
         <h1> Sample Project </h1>
         <div id="searchBar" ng-controller="searchController">
-            <div id="showButton" ng-click="show()">
-                {{showt}}  
+            <div id="showButton" >
+                <div class="buttonBack" ng-class="{showForm: showForm}" ng-click="show()">
+                    <div class="buttonLeft"  ng-class="{showForm: showForm}"></div>
+                    <div class="buttonRight" ng-class="{showForm: showForm}"></div>    
+                </div>  
             </div>
-            <div id="searchForm" ng-show="showForm">
-                <form class="input-group" ng-submit="search()">
+            <div id="searchFormWrapper" ng-show="showForm">
+                <form id="searchForm" ng-submit="search()" >
                     <!--<input type="text" class="form-control" placeholder="destination?" ng-model="dest">-->
-                    <input type="text" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
-                    <button class="btn btn-default" type="submit" id="searchB">SEARCH</button>
+                    <input type="text" id="inputText" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
+                    <button  type="submit" id="searchB">SEARCH</button>
                 </form>
             </div>
         </div>    
@@ -39,7 +43,8 @@
     <script src="js/controllers/resultController.js"></script>
 
     <!-- Directives -->
-
+    <script src="js/directives/resizeDirective.js"></script>
+    
     <!-- Factories/Services -->
     <script src="js/factories/listFactory.js"></script>
     <script src="js/factories/changeDestFactory.js"></script>

@@ -3,7 +3,7 @@ app.factory('listF', ['$http',function($http){
 
     o.dest = {};
     o.dest["address"] = "";
-    o.dest["latlng"] = [];
+    o.dest["latlng"] = [0,0];
     o.businesses = {};
     
     o.search = function(term, lat, lng) {

@@ -1,26 +1,75 @@
-<div id="resultWrapper">
-    
+<div id="resultWrapper"  resize>
+   
+            
 <div id="selectWrapper">
     <button class="select" ng-click="search('hotels')">HOTEL</button>
     <button class="select" ng-click="search('restaurants')">FOOD</button>
     <button class="select" ng-click="search('bars')">BAR</button>
 </div>
 
+<div id="contentWrapper">
+    <div id="mapWrapper">
+      <ng-map zoom="14" style="height:100%" scrollwheel="false">
+        <custom-marker ng-repeat="p in business track by $index"
+          position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
+          <div class="tag">
+            {{$index+1}}:{{p.name}}
+          </div>
+        </custom-marker>
+        <custom-marker id="dest" position="{{dest['latlng']}}">
+            <img id="targetImg" src="./images/8753.png"/>
+        </custom-marker>
+      </ng-map>
+    </div>
 
-
-<div id="mapWrapper" >
-  <ng-map zoom="14" center="{{dest['latlng']}}" on-center-changed="" style="height:100%">
-    <custom-marker ng-repeat="p in business track by $index"
-      position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
-      <div class="tag">
-        {{p.name}}: {{p['location']['coordinate']['latitude']}}, {{p['location']['coordinate']['longitude']}}
-      </div>
-    </custom-marker>
-    <custom-marker id="dest" position="{{dest['latlng']}}">
-        <img id="targetImg" src="./target.png"/>
-    </custom-marker>
-  </ng-map>
+    <div id="centerButton">
+        <img src="./images/target.png" ng-click="setDestCenter()"/>
+    </div>   
+   
+    <div id="listWrapper">
+        <div class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index">
+                    
+            <div class="up">
+                <div class="listIndex">{{$index+1}}</div>
+                <div class="upRight">
+                    <div class="listName">{{p.name}}</div>
+                    <div class="listClosed" ng-show="{{p.is_closed}}">
+                        CLOSED
+                    </div> 
+                    <img class="listRating" ng-src="{{p.rating_img_url_small}}"/>                 
+                </div>
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="mid">
+                <div class="listImgWrapper">
+                    <img ng-src="{{p.image_url}}"/>  
+                </div>
+                <div class="listAdd">
+                    <div>{{p.location.display_address[0]}}</div>
+                    <div>{{p.location.display_address[1]}}</div>
+                    <div>{{p.location.display_address[2]}}</div>  
+                </div>  
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="down">
+                <a href="tel:{{p.display_phone}}">
+                    <div class="aWrapper">
+                        {{p.display_phone}}
+                    </div>
+                </a>
+                <a href="{{p.url}}" target="_blank">
+                    <div class="aWrapper">
+                        Check on Yelp
+                    </div>
+                </a>
+            </div>  
+             
+        </div>
+    </div>
 </div>
-
 
 </div>
