@@ -243,6 +243,11 @@ nav h1{
     overflow: hidden;
 }
 
+.listImgWrapper img{
+    width: 100%;
+    height: auto;
+}
+
 .listAdd{
     margin-left: 16px;
 }
