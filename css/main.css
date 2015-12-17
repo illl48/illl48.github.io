@@ -142,6 +142,7 @@ nav h1{
     position: relative;
     width:100%;
     height: 100%;
+    background-color: #259291;
 }
 
 #mapWrapper{
@@ -153,7 +154,7 @@ nav h1{
 }
 
 .tag{
-    background-color: #B03774;/*#B03774;*/
+    background-color: #B03774;
     color: white;
 }
 

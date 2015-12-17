@@ -5,7 +5,8 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
     $scope.geocoder = new google.maps.Geocoder();
     
     $scope.show = function(){
-        $scope.showForm=!$scope.showForm;    
+        $scope.showForm=!$scope.showForm;
+        $scope.address = "";
     }    
     
     $scope.search=function() {
