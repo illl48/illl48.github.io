@@ -3,7 +3,7 @@
 <div id="resultCover"  ng-hide="started">
     <div class="first">
        <div>Press</div>
-        <div class="buttonBack">
+        <div class="buttonBack" id="noCursor">
             <div class="buttonLeft"></div>
             <div class="buttonRight"></div>    
         </div>
@@ -23,7 +23,7 @@
         <custom-marker ng-repeat="p in business track by $index"
           position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
           <div class="tag">
-            {{$index+1}}:{{p.name}}
+            {{$index+1}}
           </div>
         </custom-marker>
         <custom-marker id="dest" position="{{dest['latlng']}}">

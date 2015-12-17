@@ -114,6 +114,11 @@ nav h1{
     font-size: 30px;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: bolder;
+    cursor: default;
+}
+
+#noCursor{
+    cursor: default;
 }
 
 #selectWrapper{
