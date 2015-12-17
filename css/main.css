@@ -171,6 +171,11 @@ nav h1{
 }
 
 .tag{
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
     background-color: #B03774;
     color: white;
 }
@@ -225,6 +230,7 @@ nav h1{
     color: #B03774;/*#259291;*/
     font-weight: bolder;
     font-size: 30px;
+    margin-right: 4px;
 }
 
 .upRight{
@@ -256,12 +262,13 @@ nav h1{
 }
 
 .listImgWrapper{
+    width:30%;
     border-radius: 0%;
     overflow: hidden;
 }
 
 .listImgWrapper img{
-    width: 100%;
+    max-width: 100px;
     height: auto;
 }
 
@@ -328,6 +335,31 @@ a{
         background-color: #259291;
     }  
 }
+
+@media all and (max-width: 420px) {
+    #mapWrapper{
+        position: fixed;
+        width: 100%;
+        top:90px;
+        height: 100px;
+        z-index: 2;
+    }
+
+    #centerButton{
+        top:100px;
+        right:10px;
+        z-index: 3;    
+    }    
+
+    #listWrapper{
+        position: absolute;
+        top:240px;
+        z-index: 1;
+        width:100%;
+        margin-left: 0;
+        background-color: #259291;
+    }  
+}
 /****************************************/
 .buttonBack{
     position: relative;
@@ -366,16 +398,20 @@ a{
     border-width: 0;
     background-color: white;
     transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 .buttonRight{
     position: absolute;
     top: 24px;
-    left:21px;
+    left:20px;
     width:13px;
     height:4px;
     background-color: white;
     transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
     transition: all 0.2s;
 }
 
