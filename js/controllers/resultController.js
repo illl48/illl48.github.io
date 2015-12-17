@@ -6,10 +6,14 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.map;
     $scope.offsetx;
     $scope.currentTerm="";
+    $scope.started=false;
     
     NgMap.getMap().then(function(map) {
         $scope.map = map;
-        $scope.center = $scope.dest;
+            var tempdest = {};
+    tempdest["address"] = "";
+    tempdest["latlng"] = [0,0];
+        $scope.center = tempdest;//$scope.dest;
         $scope.currentTerm="hotels";
         $scope.map.setCenter($scope.offsetCenter($scope.center));
     });
@@ -78,8 +82,10 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     
     changeF.onDestChanged(function(dest) { 
         $scope.map.setCenter($scope.offsetCenter(dest));
+        $scope.center = dest;
         $scope.business = listF.businesses['hotels'];
         $scope.currentTerm="hotels";
+        $scope.started=true;
     });
     
     

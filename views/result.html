@@ -1,5 +1,15 @@
 <div id="resultWrapper"  resize>
-   
+
+<div id="resultCover"  ng-hide="started">
+    <div class="first">
+       <div>Press</div>
+        <div class="buttonBack">
+            <div class="buttonLeft"></div>
+            <div class="buttonRight"></div>    
+        </div>
+        <div>to start.</div>
+    </div>
+</div>              
             
 <div id="selectWrapper">
     <button class="select" ng-class="{selectedTerm: selectedTerm('hotels')}" ng-click="search('hotels')">HOTEL</button>

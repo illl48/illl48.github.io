@@ -14,7 +14,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         controller: 'resultController',
     });
 
-    $urlRouterProvider.otherwise('firstpage');
+    $urlRouterProvider.otherwise('result');
     
 }]);
 
