@@ -5,10 +5,12 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.business = listF.businesses['hotels'];
     $scope.map;
     $scope.offsetx;
+    $scope.currentTerm="";
     
     NgMap.getMap().then(function(map) {
         $scope.map = map;
         $scope.center = $scope.dest;
+        $scope.currentTerm="hotels";
         $scope.map.setCenter($scope.offsetCenter($scope.center));
     });
     
@@ -28,11 +30,19 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
       $scope.currentPosition = $scope.positions[$scope.currentIndex];
     }
     */
-    
+    $scope.selectedTerm = function(term){
+        if($scope.currentTerm===term){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     
     $scope.search = function(term){
         if(listF.businesses[term]){
             $scope.business = listF.businesses[term];
+            $scope.currentTerm=term;
             return;
         }
         
@@ -44,6 +54,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             listF.businesses[term] = [];
             angular.copy(res.businesses, listF.businesses[term]);
             $scope.business = listF.businesses[term];
+            $scope.currentTerm=term;
         });  
     }
     
@@ -68,6 +79,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     changeF.onDestChanged(function(dest) { 
         $scope.map.setCenter($scope.offsetCenter(dest));
         $scope.business = listF.businesses['hotels'];
+        $scope.currentTerm="hotels";
     });
     
     

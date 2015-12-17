@@ -38,8 +38,8 @@ nav h1{
 #searchFormWrapper{
     width: 100%;
     clear: right;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     background-color: #259291;
 }
 
@@ -107,7 +107,7 @@ nav h1{
 #selectWrapper{
     display:inline-flex;
 	width:100%;
-    top:50px;
+    top:53px;
     height: 40px;
     justify-content:space-around;
     align-items:center;
@@ -120,7 +120,7 @@ nav h1{
     display: inline-block;
     width:32%;
     height: 30px;
-    background: black;
+    background: #BEAEC4;
     color: aliceblue;
     text-align:center;
     cursor: pointer;
@@ -131,6 +131,10 @@ nav h1{
 .select:active{
     position: relative;
     top:1px;
+}
+
+.select.selectedTerm{
+    background: black;
 }
 
 #contentWrapper{

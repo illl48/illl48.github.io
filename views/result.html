@@ -2,9 +2,9 @@
    
             
 <div id="selectWrapper">
-    <button class="select" ng-click="search('hotels')">HOTEL</button>
-    <button class="select" ng-click="search('restaurants')">FOOD</button>
-    <button class="select" ng-click="search('bars')">BAR</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('hotels')}" ng-click="search('hotels')">HOTEL</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('restaurants')}" ng-click="search('restaurants')">FOOD</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('bars')}" ng-click="search('bars')">BAR</button>
 </div>
 
 <div id="contentWrapper">
