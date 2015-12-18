@@ -89,8 +89,11 @@ nav h1{
     position: relative;
     top:150px;
     display:inline-flex;
+    display:-webkit-inline-flex;
     flex-direction:row;
+    -webkit-flex-direction:row;
     align-items:center;
+    -webkit-align-items:center;
 }
 
 .first div{
@@ -123,11 +126,14 @@ nav h1{
 
 #selectWrapper{
     display:inline-flex;
+    display:-webkit-inline-flex;
 	width:100%;
     top:53px;
     height: 40px;
     justify-content:space-around;
+    -webkit-justify-content:space-around;
     align-items:center;
+    -webkit-align-items:center;
     z-index: 3;
     position: fixed;
     background-color: #259291;
@@ -222,6 +228,9 @@ nav h1{
     display:inline-flex;
     flex-direction:row;
     align-items:center;
+    display:-webkit-inline-flex;
+    -webkit-flex-direction:row;
+    -webkit-align-items:center;
 }
 
 .listIndex{
@@ -259,6 +268,9 @@ nav h1{
     display:inline-flex;
     flex-direction:row;
     align-items:center;
+    display:-webkit-inline-flex;
+    -webkit-flex-direction:row;
+    -webkit-align-items:center;
 }
 
 .listImgWrapper{
@@ -285,6 +297,10 @@ nav h1{
     flex-direction:row;
     align-items:center;
     justify-content:center;
+    display:-webkit-inline-flex;
+    -webkit-flex-direction:row;
+    -webkit-align-items:center;
+    -webkit-justify-content:center;
 }
 
 a{ 
