@@ -263,12 +263,13 @@ nav h1{
 
 .listImgWrapper{
     width:30%;
+    max-width: 100px;
     border-radius: 0%;
     overflow: hidden;
 }
 
 .listImgWrapper img{
-    max-width: 100px;
+    width: 100%;
     height: auto;
 }
 
@@ -341,7 +342,7 @@ a{
         position: fixed;
         width: 100%;
         top:90px;
-        height: 100px;
+        height: 150px;
         z-index: 2;
     }
 
@@ -353,7 +354,7 @@ a{
 
     #listWrapper{
         position: absolute;
-        top:240px;
+        top:190px;
         z-index: 1;
         width:100%;
         margin-left: 0;
