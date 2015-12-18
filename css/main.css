@@ -186,6 +186,16 @@ nav h1{
     color: white;
 }
 
+.selected>.tag{
+    position: relative;
+    top:-3px;
+    left:-4px;
+    padding: 5px;
+    background-color: #9FD7C9;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
 #targetImg{
     width: 35px;
     height: auto;

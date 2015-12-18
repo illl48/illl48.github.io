@@ -14,28 +14,12 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     tempdest["address"] = "";
     tempdest["latlng"] = [0,0];
         //$scope.center = tempdest;//$scope.dest;
-        $scope.center.push(tempdest["latlng"][0]);
-        $scope.center.push(tempdest["latlng"][1]);
+        $scope.center.push(0);
+        $scope.center.push(0);
         $scope.currentTerm="hotels";
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     });
     
-
-     /*
-    var vm = this;
-    vm.setPositions = function(pos) {
-      vm.positions = angular.copy(pos);
-    };
-    vm.setPositions(vm.positions1);
-
-    $scope.currentIndex = 0;
-    $scope.selectNextCustomMarker = function() {
-      $scope.map.customMarkers[$scope.currentIndex].removeClass('selected');
-      $scope.currentIndex = ($scope.currentIndex+1) % $scope.positions.length;
-      $scope.map.customMarkers[$scope.currentIndex].addClass('selected');
-      $scope.currentPosition = $scope.positions[$scope.currentIndex];
-    }
-    */
     $scope.selectedTerm = function(term){
         if($scope.currentTerm===term){
             return true;
@@ -49,6 +33,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         if(listF.businesses[term]){
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
+            $scope.clearMarker();
             return;
         }
         
@@ -61,6 +46,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             angular.copy(res.businesses, listF.businesses[term]);
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
+            $scope.clearMarker();
         });  
     }
     
@@ -74,14 +60,23 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
+        var offsety = 0;
         var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(lat, lng));
-        var pixelOffset = new google.maps.Point((offsetx/scale),(-40/scale));
+        var pixelOffset = new google.maps.Point((offsetx/scale),(offsety/scale));
         var worldCoordinateNewCenter = new google.maps.Point(
             worldCoordinateCenter.x - pixelOffset.x,
             worldCoordinateCenter.y + pixelOffset.y
         );
 
         return $scope.map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
+    }
+    
+    $scope.clearMarker = function(){
+         for(var i=1; i<=$scope.business.length; i++){
+            $scope.map.customMarkers[i].removeClass('selected');
+            $scope.map.customMarkers[i].setZIndex(1);
+         }  
+         $window.scrollTo(0, 0); 
     }
     
     changeF.onDestChanged(function(dest) { 
@@ -92,9 +87,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.business = listF.businesses['hotels'];
         $scope.currentTerm="hotels";
         $scope.started=true;
+        $scope.clearMarker();
     });
-    
-    
     
     $scope.$on("window_size", function(event, data){
         if(data < 583){
@@ -111,6 +105,35 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.center[0] = $scope.business[currentIndex]['location']['coordinate']['latitude'];
         $scope.center[1] = $scope.business[currentIndex]['location']['coordinate']['longitude'];        
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
+        if(currentIndex === 0){
+            $scope.map.customMarkers[currentIndex+1].addClass('selected');
+            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
+            for(var i=2; i<$scope.business.length; i++){
+                $scope.map.customMarkers[i].removeClass('selected');
+                $scope.map.customMarkers[i].setZIndex(1);
+            }
+        }
+        else if(currentIndex+1 === $scope.business.length){
+            $scope.map.customMarkers[currentIndex+1].addClass('selected');
+            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
+            for(var i=1; i<$scope.business.length; i++){
+                $scope.map.customMarkers[i].removeClass('selected');
+                $scope.map.customMarkers[i].setZIndex(1);
+            }            
+        }
+        else{
+            for(var i=1; i<=currentIndex; i++){
+                $scope.map.customMarkers[i].removeClass('selected');
+                $scope.map.customMarkers[i].setZIndex(1);
+            }
+            $scope.map.customMarkers[currentIndex+1].addClass('selected'); 
+            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
+            for(var i=currentIndex+2; i<=$scope.business.length; i++){
+                $scope.map.customMarkers[i].removeClass('selected');
+                $scope.map.customMarkers[i].setZIndex(1);
+            }
+        }
+        
     }); 
     
 }]);

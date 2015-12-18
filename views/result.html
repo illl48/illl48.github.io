@@ -20,14 +20,14 @@
 <div id="contentWrapper">
     <div id="mapWrapper">
       <ng-map zoom="14" style="height:100%" scrollwheel="false">
+        <custom-marker id="dest" position="{{dest['latlng']}}">
+            <img id="targetImg" src="./images/8753.png"/>
+        </custom-marker>
         <custom-marker ng-repeat="p in business track by $index"
           position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
           <div class="tag">
             {{$index+1}}
           </div>
-        </custom-marker>
-        <custom-marker id="dest" position="{{dest['latlng']}}">
-            <img id="targetImg" src="./images/8753.png"/>
         </custom-marker>
       </ng-map>
     </div>
