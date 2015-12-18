@@ -23,12 +23,15 @@
             </div>
             <div id="searchFormWrapper" ng-show="showForm">
                 <form id="searchForm" ng-submit="search()" >
-                    <!--<input type="text" class="form-control" placeholder="destination?" ng-model="dest">-->
                     <input type="text" id="inputText" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
-                    <button  type="submit" id="searchB">SEARCH</button>
+                    <button  type="submit" id="searchB">SEARCH</button>        
                 </form>
-            </div>
+                <div id="or">OR</div>
+                <button id="searchByCurrent" ng-click="searchByCurrent()">
+                    USE CURRENT LOCATION
+                </button> 
         </div>    
+            </div>
     </nav>
     <div id="container">
         <div ui-view></div>

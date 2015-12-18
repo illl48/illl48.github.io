@@ -47,17 +47,35 @@ nav h1{
     position: relative;
     width: 90%;
     left:5%;
+    font-size: 0;
 }
 
 #inputText{
+    font-size: 12px;
     width: 70%;
+    margin: 0;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 2px #969696;
+    transition: border 0.3s;
+}
+
+#inputText:focus{
+    outline: none;
+    border-bottom: solid 2px black;
 }
 
 #searchB{
+    width: 20%;
+    margin: 0;
+    height:36px;
     cursor: pointer;
     background-color: #585858;
     border-width: 0;
-    border-radius: 10px;
+    border-radius: 0px;
     color:white;
     padding: 5px 10px 5px 10px;
 }
@@ -67,6 +85,36 @@ nav h1{
 }
 
 #searchB:active{
+    position: relative;
+    top:1px;
+}
+
+#or{
+    position: relative;
+    width: 90%;
+    left:5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#searchByCurrent{
+    position: relative;
+    left:5%; 
+    height:36px;
+    cursor: pointer;
+    background-color: #585858;
+    border-width: 0;
+    border-radius: 0px;
+    color:white;
+    padding: 5px 10px 5px 10px;
+}
+
+#searchByCurrent:hover{
+    background-color: black;    
+}
+
+#searchByCurrent:active{
     position: relative;
     top:1px;
 }
