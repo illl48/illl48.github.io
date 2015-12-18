@@ -1,4 +1,5 @@
 app.controller('searchController', ['$scope','listF','$state','changeF', function($scope,listF,$state,changeF) {
+    $scope.template = "./views/nav.html"
     $scope.showForm = false;
     $scope.showt = "search";
     $scope.address = "";
