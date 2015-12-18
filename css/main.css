@@ -447,11 +447,11 @@ ng-map{
     display:inline-flex;
     flex-direction:row;
     align-items:center;
-    justify-content:center;
+    justify-content:space-between;
     display:-webkit-inline-flex;
     -webkit-flex-direction:row;
     -webkit-align-items:center;
-    -webkit-justify-content:center;
+    -webkit-justify-content:space-between;
 }
 
 a{ 
@@ -463,7 +463,6 @@ a{
     padding: 2px 4px 2px 4px;
     border-radius: 5px;
     font-size: 14px;
-    margin-right: 10px;
     text-align: center;
     color: white;
 }
@@ -476,11 +475,11 @@ a{
     background-color: white;
     text-align: center;
     font-size:14px;
-    margin-right: 10px;
+    
 }
 
 
-@media all and (max-width: 956px) {
+@media all and (max-width: 1132px) {
     .down{
         display: block;
     }
