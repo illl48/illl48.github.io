@@ -7,22 +7,23 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.offsetx;
     $scope.currentTerm = "";
     $scope.started = false;
+    
+    $scope.showDirection = false;
     $scope.directionsOrigin = "";
     $scope.directionsDestination = "";
     
     $scope.getDirection = function(index){
         $scope.directionsOrigin=new google.maps.LatLng($scope.dest["latlng"][0], $scope.dest["latlng"][1]);
         $scope.directionsDestination=new google.maps.LatLng($scope.business[index]['location']['coordinate']['latitude'], $scope.business[index]['location']['coordinate']['longitude']);
+        $scope.map.directionsRenderers[0].setMap($scope.map);
+        $scope.showDirection = true;
+        $window.scrollTo(0, 0); 
     }
     
-    
-    NgMap.getMap().then(function(map) {
-        $scope.map = map;
-        $scope.center.push(0);
-        $scope.center.push(0);
-        $scope.currentTerm="hotels";
-        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));         
-    });
+    $scope.closeDirection = function(){
+        $scope.showDirection = false;
+        $scope.map.directionsRenderers[0].setMap(null);
+    }
     
     $scope.selectedTerm = function(term){
         if($scope.currentTerm===term){
@@ -55,7 +56,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     }
     
     $scope.setDestCenter = function(){
-        console.log("set dest center!");
         $scope.center[0] = $scope.dest["latlng"][0];
         $scope.center[1] = $scope.dest["latlng"][1];
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));    
@@ -85,7 +85,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     
     changeF.onDestChanged(function(dest) { 
         $scope.map.setCenter($scope.offsetCenter(dest["latlng"][0],dest["latlng"][1]));
-        //$scope.center = dest;
         $scope.center[0] = dest["latlng"][0];
         $scope.center[1] = dest["latlng"][1];
         $scope.business = listF.businesses['hotels'];
@@ -140,5 +139,12 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         
     }); 
 
+    NgMap.getMap().then(function(map) {
+        $scope.map = map;
+        $scope.center.push(0);
+        $scope.center.push(0);
+        $scope.currentTerm="hotels";
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));         
+    });
     
 }]);

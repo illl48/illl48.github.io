@@ -19,18 +19,19 @@
 
 <div id="contentWrapper">
     <div id="mapWrapper">
-      <ng-map zoom="14" style="height:100%" scrollwheel="false"  >
+      <ng-map zoom="13" style="height:100%" scrollwheel="false"  >
         <custom-marker id="dest" position="{{dest['latlng']}}">
-            <img id="targetImg" src="./images/8753.png"/>
+            <img id="targetImg" ng-hide="showDirection" src="./images/8753.png"/>
         </custom-marker>
         <custom-marker ng-repeat="p in business track by $index"
           position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
-          <div class="tag">
-            {{$index+1}}
-          </div>
+            <div ng-hide="showDirection">
+                <div class="tag">
+                    {{$index+1}}
+                </div>
+            </div>
         </custom-marker>
         <directions
-         
           draggable="false"
           panel="directions-panel"
           travel-mode="DRIVING"
@@ -39,15 +40,23 @@
         </directions>
       </ng-map>
     </div>
-    
-<div id="directions-panel" style="position:fixed; z-index:99; top:0"></div>
  
     <div id="centerButton">
         <img src="./images/target.png" ng-click="setDestCenter()"/>
     </div>   
+    <div id="panelWrapper" ng-show="showDirection">
+        <div id="panelTop">
+            <div id="direction">Direction:</div>
+            <div id="closePanel" ng-click="closeDirection()">
+                <div id="closePanelLeft"></div>
+                <div id="closePanelRight"></div>    
+            </div>           
+        </div>   
+        <div id="directions-panel"></div>        
+    </div>   
    
-    <div id="listWrapper" spar>     
-        <div list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index">
+    <div id="listWrapper" ng-hide="showDirection" spar>    
+        <div list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index" >
             <div class="up">
                 <div class="listIndex">{{$index+1}}</div>
                 <div class="upRight">
