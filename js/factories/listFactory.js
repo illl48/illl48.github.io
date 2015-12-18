@@ -7,7 +7,6 @@ app.factory('listF', ['$http',function($http){
     o.businesses = {};
     
     o.search = function(term, lat, lng) {
-        console.log("term="+term+", lat="+lat+", lng="+lng);
         o.dest["address"] = "";
         o.dest["latlng"] = [];
         o.dest["latlng"].push(lat);

@@ -27,7 +27,6 @@ nav h1{
 
 #searchBar{
     display: inline;
-    transition: all 1s;
 }
 
 #showButton{
@@ -176,7 +175,7 @@ nav h1{
     display:inline-flex;
     display:-webkit-inline-flex;
 	width:100%;
-    top:53px;
+    top:52px;
     height: 40px;
     justify-content:space-around;
     -webkit-justify-content:space-around;
@@ -219,9 +218,14 @@ nav h1{
 #mapWrapper{
     position: fixed;
     width: 100%;
-    top:90px;
-    height: calc(100% - 90px);
+    top:52px;
+    height: calc(100% - 52px);
     z-index: 1;
+}
+
+ng-map{
+    width:100%;
+    height: 100%;
 }
 
 .tag{
@@ -232,6 +236,7 @@ nav h1{
     line-height: 20px;
     background-color: #B03774;
     color: white;
+    transition: all 0.3s;
 }
 
 .selected .tag{
@@ -265,7 +270,7 @@ nav h1{
 
 #panelWrapper{
     position: absolute;
-    top:40px;
+    top:0px;
     z-index: 2;
     width:30%;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -277,7 +282,7 @@ nav h1{
     position: fixed;
     z-index: 3;
     background-color: white;
-    top:92px;
+    top:52px;
     width: 30%;
     left: 0%;
     height: 50px;
@@ -461,6 +466,17 @@ a{
     color: white;
 }
 
+.gedDirection{
+    cursor: pointer;
+    border-style: solid;
+    padding: 2px 3px 2px 3px;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    font-size:14px;
+    margin-right: 10px;
+}
+
 
 @media all and (max-width: 956px) {
     .down{
@@ -470,14 +486,18 @@ a{
     .aWrapper{
         margin-top: 5px;
     }
+    
+    .gedDirection{
+        margin-top: 5px;
+    }
 }
 
 @media all and (max-width: 583px) {
     #mapWrapper{
         position: fixed;
         width: 100%;
-        top:90px;
-        height: 200px;
+        top:52px;
+        height: 240px;
         z-index: 2;
     }
 
@@ -489,19 +509,19 @@ a{
     
     #panelWrapper{
         position: absolute;
-        top:240px;
+        top:242px;
         z-index: 1;
         width:100%;   
     }
     
     #panelTop{
-        top:290px;
+        top:292px;
         width:100%;
     }
     
     #listWrapper{
         position: absolute;
-        top:240px;
+        top:242px;
         z-index: 1;
         width:100%;
         margin-left: 0;
@@ -513,8 +533,8 @@ a{
     #mapWrapper{
         position: fixed;
         width: 100%;
-        top:90px;
-        height: 150px;
+        top:52px;
+        height: 190px;
         z-index: 2;
     }
 
@@ -526,19 +546,19 @@ a{
     
     #panelWrapper{
         position: absolute;
-        top:190px;
+        top:192px;
         z-index: 1;
         width:100%;   
     }
     
     #panelTop{
-        top:240px;
+        top:242px;
         width:100%;
     }
     
     #listWrapper{
         position: absolute;
-        top:190px;
+        top:192px;
         z-index: 1;
         width:100%;
         margin-left: 0;

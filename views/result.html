@@ -11,7 +11,7 @@
     </div>
 </div>              
             
-<div id="selectWrapper">
+<div id="selectWrapper" ng-hide="showDirection">
     <button class="select" ng-class="{selectedTerm: selectedTerm('hotels')}" ng-click="search('hotels')">HOTEL</button>
     <button class="select" ng-class="{selectedTerm: selectedTerm('restaurants')}" ng-click="search('restaurants')">FOOD</button>
     <button class="select" ng-class="{selectedTerm: selectedTerm('bars')}" ng-click="search('bars')">BAR</button>
@@ -19,7 +19,7 @@
 
 <div id="contentWrapper">
     <div id="mapWrapper">
-      <ng-map zoom="13" style="height:100%" scrollwheel="false"  >
+      <ng-map zoom="13" map-type-control="false" scrollwheel="false">
         <custom-marker id="dest" position="{{dest['latlng']}}">
             <img id="targetImg" ng-hide="showDirection" src="./images/8753.png"/>
         </custom-marker>
@@ -94,7 +94,7 @@
                         Check on Yelp
                     </div>
                 </a>
-                <div ng-click="getDirection($index)">getDirection</div>
+                <div class="gedDirection" ng-click="getDirection($index)">Direction</div>
             </div>  
         </list>
     </div>

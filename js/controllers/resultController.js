@@ -64,7 +64,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
-        var offsety = 0;
+        var offsety = -52;
         var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(lat, lng));
         var pixelOffset = new google.maps.Point((offsetx/scale),(offsety/scale));
         var worldCoordinateNewCenter = new google.maps.Point(
@@ -83,7 +83,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
          $window.scrollTo(0, 0); 
     }
     
-    changeF.onDestChanged(function(dest) { 
+    changeF.onDestChanged(function(dest) {
+        $scope.closeDirection();
         $scope.map.setCenter($scope.offsetCenter(dest["latlng"][0],dest["latlng"][1]));
         $scope.center[0] = dest["latlng"][0];
         $scope.center[1] = dest["latlng"][1];
@@ -144,7 +145,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.center.push(0);
         $scope.center.push(0);
         $scope.currentTerm="hotels";
-        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));         
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
+        $scope.map.customMarkers.dest.setZIndex(49);
     });
     
 }]);
