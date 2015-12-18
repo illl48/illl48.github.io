@@ -14,7 +14,7 @@ app.directive('list', ['$window','$document',
             var top = ele[0].getBoundingClientRect().top;
             var height = ele[0].clientHeight;
             if(Math.floor((iH-52)/2)>top&&Math.floor((iH-52)/2)<(top+height)){
-                ele.css('background-color', 'red');
+                ele.css('background-color', '#9FD7C9');
                 scope.$emit("currentList", attrs.list); 
             }
             else{

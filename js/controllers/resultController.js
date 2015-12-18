@@ -66,14 +66,16 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     
     $scope.setDestCenter = function(){
         console.log("set dest center!");
-        $scope.map.setCenter($scope.offsetCenter($scope.dest["latlng"][0],$scope.dest["latlng"][1]));    
+        $scope.center[0] = $scope.dest["latlng"][0];
+        $scope.center[1] = $scope.dest["latlng"][1];
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));    
     } 
     
     $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
         var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(lat, lng));
-        var pixelOffset = new google.maps.Point((offsetx/scale),0);
+        var pixelOffset = new google.maps.Point((offsetx/scale),(-40/scale));
         var worldCoordinateNewCenter = new google.maps.Point(
             worldCoordinateCenter.x - pixelOffset.x,
             worldCoordinateCenter.y + pixelOffset.y
@@ -101,13 +103,11 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         else{
             $scope.offsetx = Math.floor(data * 0.16);    
         }
-        console.log("OFFSET SET");
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     }); 
     
     $scope.$on("currentList", function(event, data){
         var currentIndex = parseInt(data);
-        console.log("currentList get");
         $scope.center[0] = $scope.business[currentIndex]['location']['coordinate']['latitude'];
         $scope.center[1] = $scope.business[currentIndex]['location']['coordinate']['longitude'];        
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));

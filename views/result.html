@@ -1,4 +1,4 @@
-<div id="resultWrapper"  resize>
+<div id="resultWrapper" >
 
 <div id="resultCover"  ng-hide="started">
     <div class="first">
@@ -36,7 +36,7 @@
         <img src="./images/target.png" ng-click="setDestCenter()"/>
     </div>   
    
-    <div id="listWrapper" setpadding>     
+    <div id="listWrapper" spar>     
         <div list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index">
             <div class="up">
                 <div class="listIndex">{{$index+1}}</div>

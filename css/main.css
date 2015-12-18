@@ -144,7 +144,7 @@ nav h1{
     width:32%;
     height: 30px;
     background: #9FD7C9;
-    color: aliceblue;
+    color: white;
     text-align:center;
     cursor: pointer;
     border-width: 0;
@@ -317,7 +317,7 @@ a{
     font-size: 14px;
     margin-right: 10px;
     text-align: center;
-    color: aliceblue;
+    color: white;
 }
 
 
