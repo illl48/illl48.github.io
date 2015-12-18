@@ -37,8 +37,8 @@
     </div>   
    
     <div id="listWrapper">
-        <div class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index">
-                    
+        <div id="listHeadPadding"></div>       
+        <div class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index">          
             <div class="up">
                 <div class="listIndex">{{$index+1}}</div>
                 <div class="upRight">
@@ -77,8 +77,8 @@
                     </div>
                 </a>
             </div>  
-             
         </div>
+        <div id="listTailPadding"></div>
     </div>
 </div>
 
