@@ -1,7 +1,7 @@
 app.controller('resultController', ['$scope','$window','listF','NgMap','changeF', function($scope,$window,listF,NgMap,changeF) {
 
     $scope.dest = listF.dest;
-    $scope.center;
+    $scope.center=[];
     $scope.business = listF.businesses['hotels'];
     $scope.map;
     $scope.offsetx;
@@ -13,9 +13,11 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             var tempdest = {};
     tempdest["address"] = "";
     tempdest["latlng"] = [0,0];
-        $scope.center = tempdest;//$scope.dest;
+        //$scope.center = tempdest;//$scope.dest;
+        $scope.center.push(tempdest["latlng"][0]);
+        $scope.center.push(tempdest["latlng"][1]);
         $scope.currentTerm="hotels";
-        $scope.map.setCenter($scope.offsetCenter($scope.center));
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     });
     
 
@@ -64,13 +66,13 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     
     $scope.setDestCenter = function(){
         console.log("set dest center!");
-        $scope.map.setCenter($scope.offsetCenter($scope.dest));    
+        $scope.map.setCenter($scope.offsetCenter($scope.dest["latlng"][0],$scope.dest["latlng"][1]));    
     } 
     
-    $scope.offsetCenter = function(dest) {
+    $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
-        var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(dest["latlng"][0], dest["latlng"][1]));
+        var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(lat, lng));
         var pixelOffset = new google.maps.Point((offsetx/scale),0);
         var worldCoordinateNewCenter = new google.maps.Point(
             worldCoordinateCenter.x - pixelOffset.x,
@@ -81,8 +83,10 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     }
     
     changeF.onDestChanged(function(dest) { 
-        $scope.map.setCenter($scope.offsetCenter(dest));
-        $scope.center = dest;
+        $scope.map.setCenter($scope.offsetCenter(dest["latlng"][0],dest["latlng"][1]));
+        //$scope.center = dest;
+        $scope.center[0] = dest["latlng"][0];
+        $scope.center[1] = dest["latlng"][1];
         $scope.business = listF.businesses['hotels'];
         $scope.currentTerm="hotels";
         $scope.started=true;
@@ -98,7 +102,15 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.offsetx = Math.floor(data * 0.16);    
         }
         console.log("OFFSET SET");
-        $scope.map.setCenter($scope.offsetCenter($scope.center));
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
+    }); 
+    
+    $scope.$on("currentList", function(event, data){
+        var currentIndex = parseInt(data);
+        console.log("currentList get");
+        $scope.center[0] = $scope.business[currentIndex]['location']['coordinate']['latitude'];
+        $scope.center[1] = $scope.business[currentIndex]['location']['coordinate']['longitude'];        
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     }); 
     
 }]);

@@ -1,5 +1,5 @@
-app.directive('resize', ['$window', '$timeout', 
-  function($window, $timeout) {
+app.directive('resize', ['$window', 
+  function($window) {
     return {
       restrict: 'A',
       scope: {
