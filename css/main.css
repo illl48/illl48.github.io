@@ -47,16 +47,17 @@ nav h1{
     width: 90%;
     left:5%;
     font-size: 0;
+    border-radius: 0;
 }
 
 #inputText{
     font-size: 12px;
-    width: 70%;
+    width: calc(60% - 40px);
     margin: 0;
     appearance: none;
     box-shadow: none;
     border-radius: none;
-    padding: 10px;
+    padding: 12px 10px 8px 10px;
     border: none;
     border-bottom: solid 2px #969696;
     transition: border 0.3s;
@@ -68,15 +69,14 @@ nav h1{
 }
 
 #searchB{
-    width: 20%;
-    margin: 0;
+    width: 80px;
     height:36px;
     cursor: pointer;
     background-color: #585858;
     border-width: 0;
     border-radius: 0px;
     color:white;
-    padding: 5px 10px 5px 10px;
+    font-size: 14px;
 }
 
 #searchB:hover{
