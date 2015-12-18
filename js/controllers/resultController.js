@@ -1,23 +1,27 @@
-app.controller('resultController', ['$scope','$window','listF','NgMap','changeF', function($scope,$window,listF,NgMap,changeF) {
+app.controller('resultController', ['$scope','$window','listF','NgMap','changeF',function($scope,$window,listF,NgMap,changeF) {
 
     $scope.dest = listF.dest;
-    $scope.center=[];
+    $scope.center = [];
     $scope.business = listF.businesses['hotels'];
     $scope.map;
     $scope.offsetx;
-    $scope.currentTerm="";
-    $scope.started=false;
+    $scope.currentTerm = "";
+    $scope.started = false;
+    $scope.directionsOrigin = "";
+    $scope.directionsDestination = "";
+    
+    $scope.getDirection = function(index){
+        $scope.directionsOrigin=new google.maps.LatLng($scope.dest["latlng"][0], $scope.dest["latlng"][1]);
+        $scope.directionsDestination=new google.maps.LatLng($scope.business[index]['location']['coordinate']['latitude'], $scope.business[index]['location']['coordinate']['longitude']);
+    }
+    
     
     NgMap.getMap().then(function(map) {
         $scope.map = map;
-            var tempdest = {};
-    tempdest["address"] = "";
-    tempdest["latlng"] = [0,0];
-        //$scope.center = tempdest;//$scope.dest;
         $scope.center.push(0);
         $scope.center.push(0);
         $scope.currentTerm="hotels";
-        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));         
     });
     
     $scope.selectedTerm = function(term){
@@ -135,5 +139,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         }
         
     }); 
+
     
 }]);

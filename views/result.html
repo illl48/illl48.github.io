@@ -19,7 +19,7 @@
 
 <div id="contentWrapper">
     <div id="mapWrapper">
-      <ng-map zoom="14" style="height:100%" scrollwheel="false">
+      <ng-map zoom="14" style="height:100%" scrollwheel="false"  >
         <custom-marker id="dest" position="{{dest['latlng']}}">
             <img id="targetImg" src="./images/8753.png"/>
         </custom-marker>
@@ -29,9 +29,19 @@
             {{$index+1}}
           </div>
         </custom-marker>
+        <directions
+         
+          draggable="false"
+          panel="directions-panel"
+          travel-mode="DRIVING"
+          origin="{{directionsOrigin}}"
+          destination="{{directionsDestination}}">
+        </directions>
       </ng-map>
     </div>
-
+    
+<div id="directions-panel" style="position:fixed; z-index:99; top:0"></div>
+ 
     <div id="centerButton">
         <img src="./images/target.png" ng-click="setDestCenter()"/>
     </div>   
@@ -75,6 +85,7 @@
                         Check on Yelp
                     </div>
                 </a>
+                <div ng-click="getDirection($index)">getDirection</div>
             </div>  
         </list>
     </div>
