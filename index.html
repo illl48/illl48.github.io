@@ -15,7 +15,26 @@
     <script src="js/vendor/ngAutocomplete.js"></script>
 </head>
 <body ng-app="MyApp" >
-    <nav ng-include="template" ng-controller="searchController">
+    <nav ng-controller="searchController">
+    <h1> Sample Project </h1>
+    <div id="searchBar">
+        <div id="showButton" >
+            <div class="buttonBack" ng-class="{showForm: showForm}" ng-click="show()">
+                <div class="buttonLeft"  ng-class="{showForm: showForm}"></div>
+                <div class="buttonRight" ng-class="{showForm: showForm}"></div>    
+            </div>  
+        </div>
+        <div id="searchFormWrapper" ng-show="showForm">
+            <form id="searchForm" ng-submit="search()" >
+                <input type="text" id="inputText" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
+                <button  type="submit" id="searchB">SEARCH</button>        
+            </form>
+            <div id="or">OR</div>
+            <button id="searchByCurrent" ng-click="searchByCurrent()">
+                USE CURRENT LOCATION
+            </button> 
+        </div>    
+    </div>
     </nav>
     <div id="container">
         <div ui-view></div>
