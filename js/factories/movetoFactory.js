@@ -22,7 +22,7 @@ app.factory('movetoF', ['$window',function($window){
               $window.scrollBy(0, 5);
               distance -= 5;     
           }
-        },1);
+        },1, true);
     };
 
     return o;
