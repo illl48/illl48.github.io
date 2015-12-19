@@ -28,7 +28,6 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
     
     $scope.search=function() {
         var address = $scope.address;
-        console.log("address="+address);
         $scope.geocoder.geocode({'address': address}, function(results, status) {
             if (status === google.maps.GeocoderStatus.OK) {
                 var temp = JSON.parse(JSON.stringify(results[0].geometry.location));

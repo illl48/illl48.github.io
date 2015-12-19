@@ -77,6 +77,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     
     $scope.clearMarker = function(){
          for(var i=1; i<=$scope.business.length; i++){
+            if(!$scope.map.customMarkers[i]) continue;
             $scope.map.customMarkers[i].removeClass('selected');
             $scope.map.customMarkers[i].setZIndex(1);
          }  
@@ -101,6 +102,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         else{
             $scope.offsetx = Math.floor(data * 0.16);    
         }
+        if(!$scope.map) return;
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     }); 
     
