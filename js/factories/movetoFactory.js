@@ -10,7 +10,9 @@ app.factory('movetoF', ['$window',function($window){
         var distance =(top - totalpadding === 0)? 1 : top - totalpadding;
         var up =(distance > 0)? false : true;
         var interval;
-          
+        
+        $window.scrollTo(0, top);
+        /*
         interval = setInterval(function(){
           if(up){
               if(distance >= 0) clearInterval(interval);
@@ -23,6 +25,7 @@ app.factory('movetoF', ['$window',function($window){
               distance -= 5;     
           }
         },1);
+        */
     };
 
     return o;
