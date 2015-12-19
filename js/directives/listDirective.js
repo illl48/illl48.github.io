@@ -5,11 +5,7 @@ app.directive('list', ['$window','$document',
       link: function(scope, ele, attrs) {
 
         $document.bind('scroll', function() {
-            /*
-            console.log("list #"+attrs.list+" height="+ele[0].clientHeight);
-            console.log("list #"+attrs.list+"    top="+ele[0].getBoundingClientRect().top);
-            console.log("==================");
-            */
+
             var iH = angular.element($window)[0].innerHeight;
             var iW = angular.element($window)[0].innerWidth;
             var top = ele[0].getBoundingClientRect().top;

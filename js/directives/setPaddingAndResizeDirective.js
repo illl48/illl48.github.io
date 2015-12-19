@@ -6,20 +6,20 @@ app.directive('spar', ['$window',
       },
       link: function(scope, ele, attrs) {
           var setPading = function(){
-               var iH = angular.element($window)[0].innerHeight;
+              var iH = angular.element($window)[0].innerHeight;
               if(angular.element($window)[0].innerWidth>583){
-                ele.css('padding-top', Math.floor((iH-52)*0.3) + 'px');
-              ele.css('padding-bottom', Math.floor((iH-52)*0.5) + 'px');       
+                  ele.css('padding-top', Math.floor((iH-52)*0.3) + 'px');
+                  ele.css('padding-bottom', Math.floor((iH-52)*0.5) + 'px');       
               }
               else{
-                ele.css('padding-top', '0px');
-                ele.css('padding-bottom','0px');    
+                  ele.css('padding-top', '0px');
+                  ele.css('padding-bottom','0px');    
               }
               scope.$emit("window_size",angular.element($window)[0].innerWidth); 
           }
           
           $window.onresize = function() {
-            scope.$apply();
+              scope.$apply();
           };
 
           scope.$watch(function() {

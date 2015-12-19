@@ -1,4 +1,4 @@
-app.controller('resultController', ['$scope','$window','listF','NgMap','changeF',function($scope,$window,listF,NgMap,changeF) {
+app.controller('resultController', ['$scope','$window','listF','NgMap','changeF','$location', 'movetoF',function($scope,$window,listF,NgMap,changeF,$location,movetoF) {
 
     $scope.dest = listF.dest;
     $scope.center = [];
@@ -39,6 +39,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
+            $window.scrollTo(0, 0); 
             return;
         }
         
@@ -52,19 +53,20 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
+            $window.scrollTo(0, 0); 
         });  
     }
     
     $scope.setDestCenter = function(){
         $scope.center[0] = $scope.dest["latlng"][0];
         $scope.center[1] = $scope.dest["latlng"][1];
-        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));    
+        $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));   
     } 
     
     $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
-        var offsety = -52;
+        var offsety = -22;
         var worldCoordinateCenter = $scope.map.getProjection().fromLatLngToPoint(new google.maps.LatLng(lat, lng));
         var pixelOffset = new google.maps.Point((offsetx/scale),(offsety/scale));
         var worldCoordinateNewCenter = new google.maps.Point(
@@ -81,7 +83,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.map.customMarkers[i].removeClass('selected');
             $scope.map.customMarkers[i].setZIndex(1);
          }  
-         $window.scrollTo(0, 0); 
     }
     
     changeF.onDestChanged(function(dest) {
@@ -93,6 +94,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.currentTerm="hotels";
         $scope.started=true;
         $scope.clearMarker();
+        $window.scrollTo(0, 0); 
     });
     
     $scope.$on("window_size", function(event, data){
@@ -111,35 +113,9 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.center[0] = $scope.business[currentIndex]['location']['coordinate']['latitude'];
         $scope.center[1] = $scope.business[currentIndex]['location']['coordinate']['longitude'];        
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
-        if(currentIndex === 0){
-            $scope.map.customMarkers[currentIndex+1].addClass('selected');
-            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
-            for(var i=2; i<$scope.business.length; i++){
-                $scope.map.customMarkers[i].removeClass('selected');
-                $scope.map.customMarkers[i].setZIndex(1);
-            }
-        }
-        else if(currentIndex+1 === $scope.business.length){
-            $scope.map.customMarkers[currentIndex+1].addClass('selected');
-            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
-            for(var i=1; i<$scope.business.length; i++){
-                $scope.map.customMarkers[i].removeClass('selected');
-                $scope.map.customMarkers[i].setZIndex(1);
-            }            
-        }
-        else{
-            for(var i=1; i<=currentIndex; i++){
-                $scope.map.customMarkers[i].removeClass('selected');
-                $scope.map.customMarkers[i].setZIndex(1);
-            }
+        $scope.clearMarker();
             $scope.map.customMarkers[currentIndex+1].addClass('selected'); 
-            $scope.map.customMarkers[currentIndex+1].setZIndex(50);
-            for(var i=currentIndex+2; i<=$scope.business.length; i++){
-                $scope.map.customMarkers[i].removeClass('selected');
-                $scope.map.customMarkers[i].setZIndex(1);
-            }
-        }
-        
+            $scope.map.customMarkers[currentIndex+1].setZIndex(50);        
     }); 
 
     NgMap.getMap().then(function(map) {
@@ -150,5 +126,9 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
         $scope.map.customMarkers.dest.setZIndex(49);
     });
+    
+    $scope.moveto = function (listId){
+        movetoF.moveTo(listId);
+    };
     
 }]);

@@ -26,7 +26,7 @@
         <custom-marker ng-repeat="p in business track by $index"
           position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
             <div ng-hide="showDirection">
-                <div class="tag">
+                <div class="tag" ng-click="moveto('l'+$index)">
                     {{$index+1}}
                 </div>
             </div>
@@ -56,7 +56,7 @@
     </div>   
    
     <div id="listWrapper" ng-hide="showDirection" spar>    
-        <div list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index" >
+        <div id="l{{$index}}" list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index" >
             <div class="up">
                 <div class="listIndex">{{$index+1}}</div>
                 <div class="upRight">

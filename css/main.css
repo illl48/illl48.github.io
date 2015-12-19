@@ -231,6 +231,8 @@ ng-map{
 }
 
 .tag{
+    position: relative;
+    top:20px;
     width:20px;
     height:20px;
     border-radius: 50%;
@@ -238,18 +240,26 @@ ng-map{
     line-height: 20px;
     background-color: #B03774;
     color: white;
+    cursor: pointer;
     transition: all 0.3s;
+}
+
+.tag:active{
+    top:21px;    
 }
 
 .selected .tag{
     position: relative;
-    top:-3px;
-    left:-4px;
+    top:25px;
     padding: 5px;
     background-color: #9FD7C9;
     font-size: 18px;
     font-weight: bolder;
     color: black;
+}
+
+.selected .tag:active{
+    top:26px;    
 }
 
 #targetImg{
@@ -476,6 +486,11 @@ a{
     text-align: center;
     font-size:14px;
     
+}
+
+.gedDirection:active{
+    position: relative;
+    top:1px;
 }
 
 

@@ -3,8 +3,7 @@
 <head>
     <title>Sample Project</title>
     <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0"/>     
-    <meta charset="UTF-8">
-    
+    <meta charset="UTF-8"/>
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:400,700' rel='stylesheet' type='text/css' />
     <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css' />
     <link href="css/main.css" rel="stylesheet" />
@@ -27,9 +26,13 @@
         <div id="searchFormWrapper" ng-show="showForm">
             <form id="searchForm" ng-submit="search()" >
                 <input type="text" id="inputText" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
-                <button  type="submit" id="searchB">SEARCH</button>        
+                <button  type="submit" id="searchB">
+                    SEARCH
+                </button>        
             </form>
-            <div id="or">OR</div>
+            <div id="or">
+                OR
+            </div>
             <button id="searchByCurrent" ng-click="searchByCurrent()">
                 USE CURRENT LOCATION
             </button> 
@@ -55,5 +58,6 @@
     <!-- Factories/Services -->
     <script src="js/factories/listFactory.js"></script>
     <script src="js/factories/changeDestFactory.js"></script>
+    <script src="js/factories/movetoFactory.js"></script>
 </body>
 </html>  
