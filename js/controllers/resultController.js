@@ -18,6 +18,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.directionsRenderers[0].setMap($scope.map);
         $scope.showDirection = true;
         $window.scrollTo(0, 0); 
+        movetoF.moveTo("l0");
     }
     
     $scope.closeDirection = function(){
@@ -40,12 +41,13 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.currentTerm=term;
             $scope.clearMarker();
             $window.scrollTo(0, 0);
+            movetoF.moveTo("l0");
             return;
         }
         
         listF.search(term, $scope.dest["latlng"][0], $scope.dest["latlng"][1])
         .error(function(error){
-            $scope.error = error;
+            console.log("ERROR:"+error);
         })
         .success(function(res){
             listF.businesses[term] = [];
@@ -54,6 +56,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.currentTerm=term;
             $scope.clearMarker();
             $window.scrollTo(0, 0);
+            movetoF.moveTo("l0");
         });  
     }
     
