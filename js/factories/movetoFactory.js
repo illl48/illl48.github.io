@@ -11,7 +11,7 @@ app.factory('movetoF', ['$window',function($window){
         var up =(distance > 0)? false : true;
         var interval;
         
-        $window.scrollTo(0, distance);
+        $window.scrollBy(0, distance);
         /*
         interval = setInterval(function(){
           if(up){
