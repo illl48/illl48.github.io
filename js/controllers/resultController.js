@@ -39,7 +39,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
-            $window.scrollTo(0, 0); 
+            $window.scrollTo(0, 0);
             return;
         }
         
@@ -53,7 +53,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
-            $window.scrollTo(0, 0); 
+            $window.scrollTo(0, 0);
         });  
     }
     
@@ -94,7 +94,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.currentTerm="hotels";
         $scope.started=true;
         $scope.clearMarker();
-        $window.scrollTo(0, 0); 
+        $window.scrollTo(0, 0);
     });
     
     $scope.$on("window_size", function(event, data){
@@ -114,8 +114,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.center[1] = $scope.business[currentIndex]['location']['coordinate']['longitude'];        
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
         $scope.clearMarker();
-            $scope.map.customMarkers[currentIndex+1].addClass('selected'); 
-            $scope.map.customMarkers[currentIndex+1].setZIndex(50);        
+        $scope.map.customMarkers[currentIndex+1].addClass('selected'); 
+        $scope.map.customMarkers[currentIndex+1].setZIndex(50);        
     }); 
 
     NgMap.getMap().then(function(map) {
