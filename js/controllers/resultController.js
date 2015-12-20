@@ -18,7 +18,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.directionsRenderers[0].setMap($scope.map);
         $scope.showDirection = true;
         $window.scrollTo(0, 0); 
-        movetoF.moveTo("l0");
+        movetoF.moveTo("l"+index);
     }
     
     $scope.closeDirection = function(){
