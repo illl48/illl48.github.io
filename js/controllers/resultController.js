@@ -16,8 +16,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.directionsOrigin=new google.maps.LatLng($scope.dest["latlng"][0], $scope.dest["latlng"][1]);
         $scope.directionsDestination=new google.maps.LatLng($scope.business[index]['location']['coordinate']['latitude'], $scope.business[index]['location']['coordinate']['longitude']);
         $scope.map.directionsRenderers[0].setMap($scope.map);
-        $scope.showDirection = true;
-        $window.scrollTo(0, 0); 
+        $scope.showDirection = true; 
         movetoF.moveTo("l"+index);
     }
     
