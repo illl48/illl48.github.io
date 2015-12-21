@@ -1,4 +1,4 @@
-app.controller('resultController', ['$scope','$window','listF','NgMap','changeF','$location', 'movetoF',function($scope,$window,listF,NgMap,changeF,$location,movetoF) {
+app.controller('resultController', ['$scope','listF','NgMap','changeF', 'movetoF',function($scope,listF,NgMap,changeF,movetoF) {
 
     $scope.dest = listF.dest;
     $scope.center = [];
@@ -15,7 +15,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     //show direction
     $scope.getDirection = function(index){
         $scope.currentIndex = index;
-        $window.scrollTo(0, 0);
+        movetoF.moveToTop();
         $scope.directionsOrigin=new google.maps.LatLng($scope.dest["latlng"][0], $scope.dest["latlng"][1]);
         $scope.directionsDestination=new google.maps.LatLng($scope.business[index]['location']['coordinate']['latitude'], $scope.business[index]['location']['coordinate']['longitude']);
         $scope.map.directionsRenderers[0].setMap($scope.map);

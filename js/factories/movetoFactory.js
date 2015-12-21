@@ -28,6 +28,11 @@ app.factory('movetoF', ['$window',function($window){
         },1);
         */
     };
+    
+    //scroll to top
+    o.moveToTop = function(){
+        $window.scrollTo(0, 0);
+    }
 
     return o;
 }]);
