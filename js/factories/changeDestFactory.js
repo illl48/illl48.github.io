@@ -5,10 +5,7 @@ app.factory('changeF', [function(){
     o.dest={};
     o.changeDest = function(newDest) {
         o.dest=newDest;
-        var i = 0;
-        for (i = 0; i < o.callbacks.length; i++){
-            o.callbacks[i](o.dest);    
-        }
+        o.callbacks[0](o.dest); 
     }
 
     o.onDestChanged = function(callback) {

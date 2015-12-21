@@ -90,6 +90,10 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.map.customMarkers[i].setZIndex(1);
          }  
     }
+      
+    $scope.moveto = function (listId){
+        movetoF.moveTo(listId);
+    };
     
     changeF.onDestChanged(function(dest) {
         $scope.currentIndex = 0;
@@ -133,9 +137,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
         $scope.map.customMarkers.dest.setZIndex(49);
     });
-    
-    $scope.moveto = function (listId){
-        movetoF.moveTo(listId);
-    };
+
     
 }]);
