@@ -64,8 +64,11 @@
                     <div class="listName">{{p.name}}</div>
                     <div class="listClosed" ng-show="{{p.is_closed}}">
                         CLOSED
-                    </div> 
-                    <img class="listRating" ng-src="{{p.rating_img_url_small}}"/>                 
+                    </div>
+                    <div class="listDistance">
+                        {{p.distance*0.000621371192| number:2}}&nbsp;mi    
+                    </div>  
+                    <img class="listRating" ng-src="{{p.rating_img_url_small}}"/>               
                 </div>
             </div>
             

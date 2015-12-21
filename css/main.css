@@ -411,6 +411,12 @@ ng-map{
     font-weight: bolder;
 }
 
+.listDistance{
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 100;
+}
+
 .listClosed{
     color:red;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

@@ -11,7 +11,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.directionsOrigin = "";
     $scope.directionsDestination = "";
     $scope.currentIndex = 0;
-    
+    $scope.Math=Math;
     //show direction
     $scope.getDirection = function(index){
         $scope.currentIndex = index;
