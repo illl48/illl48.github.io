@@ -23,6 +23,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.closeDirection = function(){
         $scope.showDirection = false;
         $scope.map.directionsRenderers[0].setMap(null);
+        $scope.directionsOrigin = "";
+        $scope.directionsDestination = "";
     }
     
     $scope.selectedTerm = function(term){
@@ -92,7 +94,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.setCenter($scope.offsetCenter(dest["latlng"][0],dest["latlng"][1]));
         $scope.center[0] = dest["latlng"][0];
         $scope.center[1] = dest["latlng"][1];
-        $scope.business = listF.businesses['hotels'];
+        $scope.business = listF.businesses['hotels']; 
         $scope.currentTerm="hotels";
         $scope.started=true;
         $scope.clearMarker();

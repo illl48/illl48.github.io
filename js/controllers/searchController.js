@@ -18,12 +18,11 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
             listF.businesses={};
             listF.businesses["hotels"]=[];
             angular.copy(res.businesses, listF.businesses["hotels"]);
+            changeF.changeDest(listF.dest);
             listF.dest["address"] = $scope.address;
             $scope.showForm = false;
-            changeF.changeDest(listF.dest);
-            $scope.address = "";
             $state.go('result');
-        });  
+        });
     }
     
     $scope.search=function() {
