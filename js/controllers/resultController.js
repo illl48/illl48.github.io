@@ -7,26 +7,30 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.offsetx;
     $scope.currentTerm = "";
     $scope.started = false;
-    
     $scope.showDirection = false;
     $scope.directionsOrigin = "";
     $scope.directionsDestination = "";
+    $scope.currentIndex = 0;
     
     $scope.getDirection = function(index){
+        $scope.currentIndex = index;
+        $window.scrollTo(0, 0);
         $scope.directionsOrigin=new google.maps.LatLng($scope.dest["latlng"][0], $scope.dest["latlng"][1]);
         $scope.directionsDestination=new google.maps.LatLng($scope.business[index]['location']['coordinate']['latitude'], $scope.business[index]['location']['coordinate']['longitude']);
         $scope.map.directionsRenderers[0].setMap($scope.map);
         $scope.showDirection = true; 
-        movetoF.moveTo("l"+index);
     }
     
     $scope.closeDirection = function(){
         $scope.showDirection = false;
+        setTimeout(function() {
+            $scope.moveto("l"+$scope.currentIndex);
+        }, 0);
         $scope.map.directionsRenderers[0].setMap(null);
         $scope.directionsOrigin = "";
         $scope.directionsDestination = "";
     }
-    
+        
     $scope.selectedTerm = function(term){
         if($scope.currentTerm===term){
             return true;
@@ -41,7 +45,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
-            $window.scrollTo(0, 0);
             movetoF.moveTo("l0");
             return;
         }
@@ -56,7 +59,6 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.business = listF.businesses[term];
             $scope.currentTerm=term;
             $scope.clearMarker();
-            $window.scrollTo(0, 0);
             movetoF.moveTo("l0");
         });  
     }
@@ -90,6 +92,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     }
     
     changeF.onDestChanged(function(dest) {
+        $scope.currentIndex = 0;
         $scope.closeDirection();
         $scope.map.setCenter($scope.offsetCenter(dest["latlng"][0],dest["latlng"][1]));
         $scope.center[0] = dest["latlng"][0];
@@ -98,7 +101,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.currentTerm="hotels";
         $scope.started=true;
         $scope.clearMarker();
-        $window.scrollTo(0, 0);
+        movetoF.moveTo("l0");
     });
     
     $scope.$on("window_size", function(event, data){

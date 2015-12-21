@@ -2,7 +2,7 @@ app.factory('movetoF', ['$window',function($window){
     var o = {};
 
     o.moveTo = function(listId) {
-        
+        if(!document.getElementById(listId)) return;
         var top = document.getElementById(listId).getBoundingClientRect().top;
         var iH = angular.element($window)[0].innerHeight;
         var iW = angular.element($window)[0].innerWidth;   
