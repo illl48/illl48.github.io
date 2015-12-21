@@ -9,6 +9,7 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
         $scope.address = "";
     }
     
+    //search list of hotels
     $scope.yelpSearch = function(lat, lng){
         listF.search("hotels", lat, lng)
         .error(function(error){
@@ -25,6 +26,7 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
         });
     }
     
+    //search by address
     $scope.search=function() {
         var address = $scope.address;
         $scope.geocoder.geocode({'address': address}, function(results, status) {
@@ -38,6 +40,7 @@ app.controller('searchController', ['$scope','listF','$state','changeF', functio
         });
     }
     
+    //search by current location
     $scope.searchByCurrent=function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {

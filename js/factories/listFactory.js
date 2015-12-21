@@ -6,6 +6,7 @@ app.factory('listF', ['$http',function($http){
     o.dest["latlng"] = [0,0];
     o.businesses = {};
     
+    //get result form yelp
     o.search = function(term, lat, lng) {
         o.dest["address"] = "";
         o.dest["latlng"] = [];

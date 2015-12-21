@@ -12,6 +12,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
     $scope.directionsDestination = "";
     $scope.currentIndex = 0;
     
+    //show direction
     $scope.getDirection = function(index){
         $scope.currentIndex = index;
         $window.scrollTo(0, 0);
@@ -21,6 +22,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.showDirection = true; 
     }
     
+    //close direction
     $scope.closeDirection = function(){
         $scope.showDirection = false;
         setTimeout(function() {
@@ -30,7 +32,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.directionsOrigin = "";
         $scope.directionsDestination = "";
     }
-        
+    
+    //what is the current term
     $scope.selectedTerm = function(term){
         if($scope.currentTerm===term){
             return true;
@@ -40,6 +43,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         }
     }
     
+    //search list of term
     $scope.search = function(term){
         if(listF.businesses[term]){
             $scope.business = listF.businesses[term];
@@ -63,12 +67,14 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         });  
     }
     
+    //set destination to the center
     $scope.setDestCenter = function(){
         $scope.center[0] = $scope.dest["latlng"][0];
         $scope.center[1] = $scope.dest["latlng"][1];
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));   
     } 
     
+    //set target's latlng to the center of the right part of the window
     $scope.offsetCenter = function(lat, lng) {
         var scale = Math.pow(2, $scope.map.getZoom());
         var offsetx = $scope.offsetx;
@@ -83,6 +89,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         return $scope.map.getProjection().fromPointToLatLng(worldCoordinateNewCenter);
     }
     
+    //clear marker
     $scope.clearMarker = function(){
          for(var i=1; i<=$scope.business.length; i++){
             if(!$scope.map.customMarkers[i]) continue;
@@ -90,11 +97,13 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
             $scope.map.customMarkers[i].setZIndex(1);
          }  
     }
-      
+    
+    //move the selected list to the middle
     $scope.moveto = function (listId){
         movetoF.moveTo(listId);
     };
     
+    //reset when destination changed
     changeF.onDestChanged(function(dest) {
         $scope.currentIndex = 0;
         $scope.closeDirection();
@@ -108,6 +117,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         movetoF.moveTo("l0");
     });
     
+    //remove center if window size changed
     $scope.$on("window_size", function(event, data){
         if(data < 583){
             $scope.offsetx = 0;    
@@ -119,6 +129,7 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.setCenter($scope.offsetCenter($scope.center[0],$scope.center[1]));
     }); 
     
+    //if current list changed, reset center
     $scope.$on("currentList", function(event, data){
         var currentIndex = parseInt(data);
         $scope.center[0] = $scope.business[currentIndex]['location']['coordinate']['latitude'];
@@ -128,7 +139,8 @@ app.controller('resultController', ['$scope','$window','listF','NgMap','changeF'
         $scope.map.customMarkers[currentIndex+1].addClass('selected'); 
         $scope.map.customMarkers[currentIndex+1].setZIndex(50);        
     }); 
-
+    
+    //initialize map
     NgMap.getMap().then(function(map) {
         $scope.map = map;
         $scope.center.push(0);

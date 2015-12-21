@@ -3,7 +3,7 @@ app.directive('list', ['$window','$document',
     return {
       restrict: 'A',
       link: function(scope, ele, attrs) {
-
+        //select list, change its background color and notify controller
         $document.bind('scroll', function() {
 
             var iH = angular.element($window)[0].innerHeight;

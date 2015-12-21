@@ -1,6 +1,7 @@
 app.factory('movetoF', ['$window',function($window){
     var o = {};
 
+    //move the selected list to the middle
     o.moveTo = function(listId) {
         if(!document.getElementById(listId)) return;
         var top = document.getElementById(listId).getBoundingClientRect().top;

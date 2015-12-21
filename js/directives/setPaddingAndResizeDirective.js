@@ -5,6 +5,7 @@ app.directive('spar', ['$window',
       scope: {
       },
       link: function(scope, ele, attrs) {
+          //keep first item in the list in the middle
           var setPading = function(){
               var iH = angular.element($window)[0].innerHeight;
               if(angular.element($window)[0].innerWidth>583){
