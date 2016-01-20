@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);@import url(https://fonts.googleapis.com/css?family=Playfair+Display:900italic);@import url(http://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);body {
+  background: linear-gradient(to right, #F9FBCF, #FA9F9E);
+  padding: 0;
+  margin: 0; }
+
+.navbar-default {
+  border: none;
+  background: linear-gradient(to right, #F9FBCF, #FA9F9E);
+  padding-left: 2%; }
+  .navbar-default .navbar-brand {
+    color: #8F4F5D;
+    font-size: 25px;
+    font-family: 'Abril Fatface', cursive; }
+  .navbar-default .navbar-toggle {
+    border: none;
+    background: transparent !important; }
+    .navbar-default .navbar-toggle:hover {
+      background: transparent !important; }
+    .navbar-default .navbar-toggle .icon-bar {
+      background-color: #8F4F5D;
+      width: 22px;
+      transition: all 0.2s; }
+    .navbar-default .navbar-toggle .top-bar {
+      transform: rotate(45deg);
+      transform-origin: 10% 10%; }
+    .navbar-default .navbar-toggle .middle-bar {
+      opacity: 0; }
+    .navbar-default .navbar-toggle .bottom-bar {
+      transform: rotate(-45deg);
+      transform-origin: 10% 90%; }
+  .navbar-default .navbar-toggle.collapsed .top-bar {
+    transform: rotate(0); }
+  .navbar-default .navbar-toggle.collapsed .middle-bar {
+    opacity: 1; }
+  .navbar-default .navbar-toggle.collapsed .bottom-bar {
+    transform: rotate(0); }
+
+#navbar .liWrapper li {
+  font-size: 20px; }
+
+.footer {
+  margin-top: 25px;
+  background-color: #77777F;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  color: aliceblue; }
+  .footer .facebook {
+    margin-top: 5px; }
+    .footer .facebook img {
+      width: 20px; }
+
+.homeWrapper {
+  font-size: 40px;
+  position: relative;
+  width: 90%;
+  left: 5%;
+  overflow: hidden;
+  margin-top: 40px;
+  display: flex; }
+  @media screen and (max-width: 768px) {
+    .homeWrapper {
+      display: block; } }
+  .homeWrapper .sbcwaTitle {
+    width: 40%;
+    margin-right: 5%;
+    color: black;
+    text-align: left;
+    font-size: 50px;
+    font-family: 'cwTeXFangSong', 'Playfair Display', serif;
+    font-weight: bolder; }
+    .homeWrapper .sbcwaTitle :last-child {
+      color: #8F4F5D; }
+    @media screen and (max-width: 768px) {
+      .homeWrapper .sbcwaTitle {
+        font-size: 36px;
+        width: 100%; } }
+  .homeWrapper .sbcwaInfo {
+    width: 50%; }
+    .homeWrapper .sbcwaInfo img {
+      width: 100%;
+      height: auto; }
+    @media screen and (max-width: 768px) {
+      .homeWrapper .sbcwaInfo {
+        padding-top: 20px;
+        width: 100%; } }
