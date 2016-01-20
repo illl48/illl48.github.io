@@ -36,8 +36,8 @@
     position: relative; 
     
     text-align: center;
-    width:970px; 
-    margin: auto;
+    max-width:970px; 
+    margin: 0 auto;
 }
 
 

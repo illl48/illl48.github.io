@@ -1,3 +1,61 @@
+
+
+#firstwrapper{
+  width: 100%;
+  height: 100%;    
+  position: absolute; 
+  z-index: 1;   
+}
+
+#firstwrapper #cloud{
+   position: fixed;  
+  width: 100%;
+  height: auto; 
+  top:80px;
+  left:0px;    
+  z-index: 2;
+}
+
+#firstwrapper #west{
+   position: fixed;  
+  width: 100%;
+  height: auto; 
+  top:80px;
+  left:0px;    
+  z-index: 1;
+}
+
+
+#firstwrapper #square{
+  position: fixed;
+  top:150px;    
+  width: 30%;
+  height: auto;
+  left: 35%;    
+  height: auto;    
+  z-index: 3;
+}
+
+#firstwrapper #wrapper101 {
+  position: fixed;
+  height: 300px;
+  width: 100px;    
+  z-index: 4;
+  right:25%;
+  bottom: 0px;
+        
+}
+
+
+#firstwrapper #wrapper101 #taipei101{  
+    position: relative;
+    top:0px;
+        
+}
+
+
+/**********************************************/
+/*
 .firstpagewrapper{
   position: relative;
   widows: 100%;    
@@ -253,6 +311,7 @@
     background:yellow;
     -webkit-clip-path:polygon(81% 0%, 0% 100%,19% 100%,100% 0%);
 }
+*/
 /*****************************************/
 /*
 #wily{

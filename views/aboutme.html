@@ -20,7 +20,7 @@
       </div>
       <hr>
       <p class="resumep" ng-click="opentheater()">resume (pdf)</p>
-      <span class="emailp">email: </span><span class="emailpa">{{email}}</span>
+      <p class="emailp">email: </p><p class="emailpa">{{email}}</p>
       <div class="textpartpadding"></div>
   </div>
   <div class="picpart">
@@ -75,7 +75,10 @@
             </div>
        </div>
        
-       
+       <div id="cross" onclick="document.querySelector('#flipqq').classList.toggle('hover');" ng-click="showform=!showform" ng-show="showform">
+                <div id="a"></div>
+                <div id="b"></div>
+       </div>
        <!--ng-class="{showform?after-flip-container:before-flip-container}"-->
        
        <!---------------------------------------------------------------------------------------->

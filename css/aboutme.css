@@ -151,10 +151,10 @@
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;    
   
   font-weight:bold;
-     pointer-events:all; 
+     pointer-events:all;
 }
 
-.aboutmediv .emailp{
+.aboutmediv .emailpa{
   font-size: 16px; 
 }
 
@@ -258,6 +258,36 @@
   transition: all 0.1s linear;
   /*height:2000px;*/
     
+}
+
+.sendmemail #cross{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top:12px;
+    right: 10px;
+    cursor: pointer;
+}
+
+
+.sendmemail #cross #a{
+  position:absolute;
+  width:39px;
+  height:2px;
+    background:#fff;
+    top:13px;
+    left:-4px;
+	  transform: rotate(45deg);    
+}
+
+.sendmemail #cross #b{
+  position:absolute;
+  width:39px;
+  height:2px;
+    background:#fff;
+    top:13px;
+    left:-4px;
+	  transform: rotate(-45deg); 
 }
 
 .sendmemail .mailtop{
@@ -438,9 +468,18 @@ height: 20px;
 }
 
 #mailform #mailsubmit{
+    border-width:2px;
+    border-style: solid;
+   border-color:cornsilk;
+  background-color:transparent;    
    width: 100px;
    height: 30px;
    font-weight: bold;
-   background-color: aliceblue;
+   color:aliceblue;
    cursor: pointer;
+}
+
+#mailform #mailsubmit:hover{
+   background-color: black;
+   color:aliceblue;    
 }
