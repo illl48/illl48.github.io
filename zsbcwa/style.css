@@ -4,6 +4,7 @@
   margin: 0; }
 
 .navbar-default {
+  margin: 0;
   border: none;
   background: linear-gradient(to right, #F9FBCF, #FA9F9E);
   padding-left: 2%; }
@@ -39,7 +40,6 @@
   font-size: 20px; }
 
 .footer {
-  margin-top: 25px;
   background-color: #77777F;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -51,6 +51,7 @@
       width: 20px; }
 
 .homeWrapper {
+  padding-bottom: 25px;
   font-size: 40px;
   position: relative;
   width: 90%;
@@ -78,9 +79,49 @@
   .homeWrapper .sbcwaInfo {
     width: 50%; }
     .homeWrapper .sbcwaInfo img {
-      width: 100%;
+      max-width: 100%;
       height: auto; }
     @media screen and (max-width: 768px) {
       .homeWrapper .sbcwaInfo {
         padding-top: 20px;
         width: 100%; } }
+
+.socialWrapper {
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+  background-color: none; }
+  .socialWrapper .socialTitle {
+    font-size: 32px; }
+  .socialWrapper .memberList .eachMember {
+    margin-top: 20px; }
+    .socialWrapper .memberList .eachMember img {
+      max-width: 100%;
+      height: auto; }
+
+.eventWrapper {
+  margin: 0;
+  width: 90%;
+  margin-left: 5%; }
+  .eventWrapper .eachEvent {
+    width: 100%;
+    margin-top: 20px; }
+    .eventWrapper .eachEvent .eventTitle {
+      font-size: 20px;
+      font-weight: bolder;
+      margin-bottom: 20px; }
+    .eventWrapper .eachEvent .eventImgsWrapper {
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      flex-wrap: wrap; }
+      .eventWrapper .eachEvent .eventImgsWrapper div img {
+        max-width: 100%;
+        max-height: 300px;
+        margin-left: 15px;
+        margin-bottom: 15px; }
+
+.formWrapper {
+  padding: 30px; }
+  .formWrapper input {
+    margin-bottom: 20px; }
