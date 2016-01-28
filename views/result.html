@@ -1,0 +1,107 @@
+<div id="resultWrapper" >
+
+<div id="resultCover"  ng-hide="started">
+    <div class="first">
+       <div>Press</div>
+        <div class="buttonBack" id="noCursor">
+            <div class="buttonLeft"></div>
+            <div class="buttonRight"></div>    
+        </div>
+        <div>to start.</div>
+    </div>
+</div>              
+            
+<div id="selectWrapper" ng-hide="showDirection">
+    <button class="select" ng-class="{selectedTerm: selectedTerm('hotels')}" ng-click="search('hotels')">HOTEL</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('restaurants')}" ng-click="search('restaurants')">FOOD</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('coffee')}" ng-click="search('coffee')">CAFE</button>
+    <button class="select" ng-class="{selectedTerm: selectedTerm('bars')}" ng-click="search('bars')">BAR</button>
+</div>
+
+<div id="contentWrapper">
+    <div id="mapWrapper">
+      <ng-map zoom="13" map-type-control="false" scrollwheel="false">
+        <custom-marker id="dest" position="{{dest['latlng']}}">
+            <img id="targetImg" ng-hide="showDirection" src="./images/8753.png"/>
+        </custom-marker>
+        <custom-marker ng-repeat="p in business track by $index"
+          position="[{{p['location']['coordinate']['latitude']}},{{p['location']['coordinate']['longitude']}}]">
+            <div ng-hide="showDirection">
+                <div class="tag" ng-click="moveto('l'+$index)">
+                    {{$index+1}}
+                </div>
+            </div>
+        </custom-marker>
+        <directions
+          draggable="false"
+          panel="directions-panel"
+          travel-mode="DRIVING"
+          origin="{{directionsOrigin}}"
+          destination="{{directionsDestination}}">
+        </directions>
+      </ng-map>
+    </div>
+ 
+    <div id="centerButton">
+        <img src="./images/target.png" ng-click="setDestCenter()"/>
+    </div>   
+    <div id="panelWrapper" ng-show="showDirection">
+        <div id="panelTop">
+            <div id="direction">Direction:</div>
+            <div id="closePanel" ng-click="closeDirection()">
+                <div id="closePanelLeft"></div>
+                <div id="closePanelRight"></div>    
+            </div>           
+        </div>   
+        <div id="directions-panel"></div>        
+    </div>   
+   
+    <div id="listWrapper" ng-hide="showDirection" spar>    
+        <div id="l{{$index}}" list="{{$index}}" class="list" ng-class="{closed: p.is_closed}" ng-repeat="p in business track by $index" >
+            <div class="up">
+                <div class="listIndex">{{$index+1}}</div>
+                <div class="upRight">
+                    <div class="listName">{{p.name}}</div>
+                    <div class="listClosed" ng-show="{{p.is_closed}}">
+                        CLOSED
+                    </div>
+                    <div class="listDistance">
+                        {{p.distance*0.000621371192| number:2}}&nbsp;mi    
+                    </div>  
+                    <img class="listRating" ng-src="{{p.rating_img_url_small}}"/>               
+                </div>
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="mid">
+                <div class="listImgWrapper">
+                    <img ng-src="{{p.image_url}}"/>  
+                </div>
+                <div class="listAdd">
+                    <div>{{p.location.display_address[0]}}</div>
+                    <div>{{p.location.display_address[1]}}</div>
+                    <div>{{p.location.display_address[2]}}</div>  
+                </div>  
+            </div>
+            
+            <div class="line"></div>
+            
+            <div class="down">
+                <a href="tel:{{p.display_phone}}">
+                    <div class="aWrapper">
+                        {{p.display_phone}}
+                    </div>
+                </a>
+                <a href="{{p.url}}" target="_blank">
+                    <div class="aWrapper">
+                        Check on Yelp
+                    </div>
+                </a>
+                <div class="gedDirection" ng-click="getDirection($index)">Direction</div>
+            </div>  
+        </list>
+    </div>
+</div>
+
+</div>

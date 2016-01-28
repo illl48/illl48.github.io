@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!doctype html>
 <html>
   <head>
@@ -78,10 +79,58 @@
     </div>
      
     
+=======
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Project</title>
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1.0"/>     
+    <meta charset="UTF-8"/>
+    <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps:400,700' rel='stylesheet' type='text/css' />
+    <link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css' />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://maps.google.com/maps/api/js?libraries=places" defer></script>
+    <script src="js/vendor/angular.min.js"></script>
+    <script src="js/vendor/angular-ui-router.min.js"></script>
+    <script src="js/vendor/ng-map.min.js"></script>
+    <script src="js/vendor/ngAutocomplete.js"></script>
+</head>
+<body ng-app="MyApp" >
+    <nav ng-controller="searchController">
+    <h1> Sample Project </h1>
+    <div id="searchBar">
+        <div id="showButton" >
+            <div class="buttonBack" ng-class="{showForm: showForm}" ng-click="show()">
+                <div class="buttonLeft"  ng-class="{showForm: showForm}"></div>
+                <div class="buttonRight" ng-class="{showForm: showForm}"></div>    
+            </div>  
+        </div>
+        <div id="searchFormWrapper" ng-show="showForm">
+            <form id="searchForm" ng-submit="search()" >
+                <input type="text" id="inputText" placeholder="destination?" ng-autocomplete ng-model="address" options="options" details="details"/>
+                <button  type="submit" id="searchB">
+                    SEARCH
+                </button>        
+            </form>
+            <div id="or">
+                OR
+            </div>
+            <button id="searchByCurrent" ng-click="searchByCurrent()">
+                USE CURRENT LOCATION
+            </button> 
+        </div>    
+    </div>
+    </nav>
+    <div id="container">
+        <div ui-view></div>
+    </div>
+
+>>>>>>> 5234c3f8ac3993a7d06ce59aff3e2b9673c328a4
     <!-- Modules -->
     <script src="js/app.js"></script>
 
     <!-- Controllers-->
+<<<<<<< HEAD
     <script src="js/controllers/headerController.js"></script> 
     <script src="js/controllers/firstpageController.js"></script> 
     <script src="js/controllers/yesterdayController.js"></script>
@@ -105,4 +154,18 @@
     <script src="js/megaman.js"></script>
     
   </body>
+=======
+    <script src="js/controllers/searchController.js"></script>
+    <script src="js/controllers/resultController.js"></script>
+
+    <!-- Directives -->
+    <script src="js/directives/setPaddingAndResizeDirective.js"></script>
+    <script src="js/directives/listDirective.js"></script>
+    
+    <!-- Factories/Services -->
+    <script src="js/factories/listFactory.js"></script>
+    <script src="js/factories/changeDestFactory.js"></script>
+    <script src="js/factories/movetoFactory.js"></script>
+</body>
+>>>>>>> 5234c3f8ac3993a7d06ce59aff3e2b9673c328a4
 </html>  
