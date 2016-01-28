@@ -212,3 +212,22 @@
 
 .hidden {
   display: none; }
+
+.clubsWrapper {
+  position: relative;
+  width: 90%;
+  top: 25px;
+  left: 5%;
+  padding-bottom: 25px;
+  text-align: center; }
+  .clubsWrapper .calendarWrapper .calendarTitle {
+    text-align: left;
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: black; }
+  .clubsWrapper .calendarWrapper iframe {
+    position: relative;
+    width: 85%;
+    left: -7.5%;
+    height: 830px;
+    overflow: hidden; }

@@ -90,8 +90,8 @@
 
 	var App = _require5.App;
 	var Home = _require5.Home;
+	var Directors = _require5.Directors;
 	var SocialClubs = _require5.SocialClubs;
-	var SocialClubEachYear = _require5.SocialClubEachYear;
 	var Events = _require5.Events;
 	var Membership = _require5.Membership;
 
@@ -127,9 +127,10 @@
 	      Route,
 	      { path: '/', component: App },
 	      React.createElement(IndexRoute, { component: Home }),
-	      React.createElement(Route, { path: 'socialClubs', component: SocialClubs }),
+	      React.createElement(Route, { path: 'directors', component: Directors }),
 	      React.createElement(Route, { path: 'events', component: Events }),
-	      React.createElement(Route, { path: 'membership', component: Membership })
+	      React.createElement(Route, { path: 'membership', component: Membership }),
+	      React.createElement(Route, { path: 'socialclubs', component: SocialClubs })
 	    )
 	  )
 	), document.getElementById('mount'));
@@ -25534,12 +25535,13 @@
 
 	var App = __webpack_require__(233);
 	var Home = __webpack_require__(234);
-	var SocialClubs = __webpack_require__(236);
-	var SocialClubEachYear = __webpack_require__(237);
+	var Directors = __webpack_require__(236);
+	var DirectorsEachYear = __webpack_require__(237);
 	var Events = __webpack_require__(245);
 	var Membership = __webpack_require__(247);
+	var SocialClubs = __webpack_require__(248);
 
-	module.exports = { App: App, Home: Home, SocialClubs: SocialClubs, SocialClubEachYear: SocialClubEachYear, Events: Events, Membership: Membership };
+	module.exports = { App: App, Home: Home, Directors: Directors, SocialClubs: SocialClubs, Events: Events, Membership: Membership };
 
 /***/ },
 /* 233 */
@@ -25603,7 +25605,25 @@
 	                            null,
 	                            React.createElement(
 	                                Link,
-	                                { 'data-toggle': 'collapse', 'data-target': '.navbar-collapse.in', to: '/socialClubs' },
+	                                { 'data-toggle': 'collapse', 'data-target': '.navbar-collapse.in', to: '/' },
+	                                'Home'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'li',
+	                            null,
+	                            React.createElement(
+	                                Link,
+	                                { 'data-toggle': 'collapse', 'data-target': '.navbar-collapse.in', to: '/directors' },
+	                                'Board of Directors'
+	                            )
+	                        ),
+	                        React.createElement(
+	                            'li',
+	                            null,
+	                            React.createElement(
+	                                Link,
+	                                { 'data-toggle': 'collapse', 'data-target': '.navbar-collapse.in', to: '/socialclubs' },
 	                                'Social Clubs'
 	                            )
 	                        ),
@@ -25851,16 +25871,16 @@
 
 	var bindActionCreators = _require2.bindActionCreators;
 
-	var SocialClubEachYear = __webpack_require__(237);
+	var DirectorsEachYear = __webpack_require__(237);
 	//import { fetchWeather } from '../actions/index';
 
-	var SocialClubs = function (_React$Component) {
-	  _inherits(SocialClubs, _React$Component);
+	var Directors = function (_React$Component) {
+	  _inherits(Directors, _React$Component);
 
-	  function SocialClubs(props) {
-	    _classCallCheck(this, SocialClubs);
+	  function Directors(props) {
+	    _classCallCheck(this, Directors);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SocialClubs).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Directors).call(this, props));
 
 	    _this.state = {
 	      years: [{
@@ -25868,16 +25888,16 @@
 	        members: [{ order: 0, link: 'http://www.sbcwa.org/JESSIE-2015.png' }, { order: 1, link: 'http://www.sbcwa.org/JULIA-2015.png' }, { order: 2, link: 'http://www.sbcwa.org/BETTY-2015.png' }, { order: 3, link: 'http://www.sbcwa.org/STEPHANIE-2015.png' }, { order: 4, link: 'http://www.sbcwa.org/LOUISE-2015.png' }]
 	      }, {
 	        year: '2014',
-	        members: [{ order: 0, link: 'http://www.wishforpets.com/wp-content/uploads/2015/05/Summer-Dog-Floral-Dress-5.jpg' }]
+	        members: [{ order: 0, link: 'http://www.sbcwa.org/LOUISE-2015.png' }]
 	      }]
 	    };
 	    return _this;
 	  }
 
-	  _createClass(SocialClubs, [{
+	  _createClass(Directors, [{
 	    key: 'showMember',
 	    value: function showMember(year) {
-	      return React.createElement(SocialClubEachYear, { key: year.year, year: year.year, members: year.members });
+	      return React.createElement(DirectorsEachYear, { key: year.year, year: year.year, members: year.members });
 	    }
 	  }, {
 	    key: 'render',
@@ -25894,10 +25914,10 @@
 	    }
 	  }]);
 
-	  return SocialClubs;
+	  return Directors;
 	}(React.Component);
 
-	module.exports = connect(null, null)(SocialClubs);
+	module.exports = connect(null, null)(Directors);
 
 	/*
 	const React = require('react');
@@ -25933,13 +25953,13 @@
 
 	var ReactCSSTransitionGroup = __webpack_require__(238);
 
-	var SocialClubEachYear = function (_React$Component) {
-	  _inherits(SocialClubEachYear, _React$Component);
+	var DirectorsEachYear = function (_React$Component) {
+	  _inherits(DirectorsEachYear, _React$Component);
 
-	  function SocialClubEachYear(props) {
-	    _classCallCheck(this, SocialClubEachYear);
+	  function DirectorsEachYear(props) {
+	    _classCallCheck(this, DirectorsEachYear);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(SocialClubEachYear).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(DirectorsEachYear).call(this, props));
 
 	    _this.state = {
 	      hide: true
@@ -25948,7 +25968,7 @@
 	    return _this;
 	  }
 
-	  _createClass(SocialClubEachYear, [{
+	  _createClass(DirectorsEachYear, [{
 	    key: 'showMember',
 	    value: function showMember(member) {
 	      return React.createElement(
@@ -25989,7 +26009,7 @@
 	    }
 	  }]);
 
-	  return SocialClubEachYear;
+	  return DirectorsEachYear;
 	}(React.Component);
 
 	/*
@@ -25998,7 +26018,7 @@
 	        </div>
 	*/
 
-	module.exports = SocialClubEachYear;
+	module.exports = DirectorsEachYear;
 
 /***/ },
 /* 238 */
@@ -27126,6 +27146,65 @@
 	  return <div>I am Membership!</div>;
 	}
 	*/
+
+/***/ },
+/* 248 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var React = __webpack_require__(3);
+
+	var _require = __webpack_require__(170);
+
+	var connect = _require.connect;
+
+	var _require2 = __webpack_require__(235);
+
+	var increase = _require2.increase;
+	var decrease = _require2.decrease;
+
+	var SocialClubs = function (_React$Component) {
+	    _inherits(SocialClubs, _React$Component);
+
+	    function SocialClubs() {
+	        _classCallCheck(this, SocialClubs);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(SocialClubs).apply(this, arguments));
+	    }
+
+	    _createClass(SocialClubs, [{
+	        key: 'render',
+	        value: function render() {
+	            return React.createElement(
+	                'div',
+	                { className: 'clubsWrapper' },
+	                React.createElement(
+	                    'div',
+	                    { className: 'calendarWrapper' },
+	                    React.createElement(
+	                        'div',
+	                        { className: 'calendarTitle' },
+	                        'Calendar'
+	                    ),
+	                    React.createElement('iframe', { src: 'https://docs.google.com/spreadsheets/d/17-elsjIJ6kCRUWZuZD_huDmV7N71iGcvIn4pf9Oush0/pubhtml?widget=true&headers=false' })
+	                )
+	            );
+	        }
+	    }]);
+
+	    return SocialClubs;
+	}(React.Component);
+
+	module.exports = SocialClubs;
 
 /***/ }
 /******/ ]);
