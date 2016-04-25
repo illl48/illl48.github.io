@@ -1,0 +1,62 @@
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
+
+body{
+    background-image: url("IMG_4533.JPG");
+    background-size: 100% auto;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.headerWrapper{
+    width: 100%;
+    color: #0F7A94;
+    background-color: #164B65; 
+    padding: 15px;
+    display:inline-flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+.headerWrapper h1{
+    color: white;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.headerWrapper h2{
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+#realHeader{
+    position: fixed;
+}
+
+#afterHeader{
+    width: 100%;
+    padding-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#about{
+    width: 90%;
+    left: 5%;
+    position: relative;
+    text-align: center;
+}
+
+#me{
+    width: 100px;
+    border-radius: 50%;
+}
+
+#about article{
+    text-align: justify;
+}
