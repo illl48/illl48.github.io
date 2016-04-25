@@ -67,3 +67,10 @@ body{
     text-align: justify;
     width: 100%;
 }
+
+#projects{
+    background-color: #0F7A94;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: white;
+}
