@@ -2,13 +2,11 @@
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps);
 
 body{
-    background-image: url("IMG_4533.JPG");
-    background-size: 100% auto;
+    background-color: #0F7A94;
     margin: 0;
     padding: 0;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%;
 }
 
 .headerWrapper{
@@ -35,7 +33,6 @@ body{
 }
 
 #realHeader{
-
     position: fixed;
     z-index: 2;
 }
@@ -51,11 +48,9 @@ body{
 #about{
     padding-top: 20px;
     position: relative;
-    width: 90%;
-    left: 5%;
-    position: relative;
     text-align: center;
     padding-bottom: 20px;
+    background-color: white;
 }
 
 #me{
@@ -65,12 +60,21 @@ body{
 
 #about article{
     text-align: justify;
-    width: 100%;
+    position: relative;
+    width: 90%;
+    left: 5%;
 }
 
-#projects{
+#contacts{
     background-color: #0F7A94;
     padding-top: 15px;
     padding-bottom: 15px;
     color: white;
+}
+
+#contacts a{
+    color: #164B65;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
 }
