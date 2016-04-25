@@ -75,6 +75,5 @@ body{
 #contacts a{
     color: #164B65;
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 10px;
 }
