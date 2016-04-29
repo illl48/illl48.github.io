@@ -15,9 +15,18 @@ body{
     color: #41C0C4;
     background-color: #164B65; 
     padding: 15px;
+    display:-webkit-inline-box;
+    display:-webkit-inline-flex;
+    display:-ms-inline-flexbox;
     display:inline-flex;
-    justify-content:space-between;
-    align-items:flex-end;
+    -webkit-box-pack:justify;
+    -webkit-justify-content:space-between;
+        -ms-flex-pack:justify;
+            justify-content:space-between;
+    -webkit-box-align:end;
+    -webkit-align-items:flex-end;
+        -ms-flex-align:end;
+            align-items:flex-end;
 }
 
 .headerWrapper h1{
@@ -90,10 +99,22 @@ body{
     width: 90%;
     left: 5%;
     
+    display: -webkit-box;
+    
+    display: -webkit-flex;
+    
+    display: -ms-flexbox;
+    
     display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    align-content:center;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-justify-content:space-around;
+        -ms-flex-pack:distribute;
+            justify-content:space-around;
+    -webkit-align-content:center;
+        -ms-flex-line-pack:center;
+            align-content:center;
 }
 
 .projectBox{
@@ -113,16 +134,27 @@ body{
     color: white;
     font-size: 24px;
     font-family: 'Crete Round', serif;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     z-index: 2;
     
 }
 
 .projectBox:hover > .displayName{
     visibility: hidden;
-    transition: ease-in-out, all 0.1s ease-in-out;
+    -webkit-transition: ease-in-out, all 0.1s ease-in-out;
+            transition: ease-in-out, all 0.1s ease-in-out;
 }
 
 .imgBox{
@@ -143,7 +175,8 @@ body{
 }
 
 .projectBox:hover > .articleBoxWrapper{
-    transition: ease-in-out, all 0.7s ease-in-out;
+    -webkit-transition: ease-in-out, all 0.7s ease-in-out;
+            transition: ease-in-out, all 0.7s ease-in-out;
     bottom: 0px;
 }
 
