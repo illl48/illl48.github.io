@@ -173,14 +173,27 @@ body{
             transition: ease-in-out, all 0.1s ease-in-out;
 }
 
+.projectBox:focus > .displayName{
+    visibility: hidden;
+    -webkit-transition: ease-in-out, all 0.1s ease-in-out;
+            transition: ease-in-out, all 0.1s ease-in-out;
+}
+
 .imgBox{
    max-width: 100%;
     width: 360px;
     -webkit-filter: blur(2px);
+            filter: blur(2px);
 }
 
 .projectBox:hover > .imgBox{
     -webkit-filter: none;
+            filter: none;
+}
+
+.projectBox:focus > .imgBox{
+    -webkit-filter: none;
+            filter: none;
 }
 
 .articleBoxWrapper{
@@ -191,6 +204,12 @@ body{
 }
 
 .projectBox:hover > .articleBoxWrapper{
+    -webkit-transition: ease-in-out, all 0.7s ease-in-out;
+            transition: ease-in-out, all 0.7s ease-in-out;
+    bottom: 0px;
+}
+
+.projectBox:focus > .articleBoxWrapper{
     -webkit-transition: ease-in-out, all 0.7s ease-in-out;
             transition: ease-in-out, all 0.7s ease-in-out;
     bottom: 0px;
