@@ -10,15 +10,15 @@
     <body>
         <header class="headerWrapper" id="realHeader">
             <section>
-                <h1>Edward Lai</h1>
-                <h2>WEB DEVELOPER</h2>    
+                <h1 id="EdwardLai">Edward Lai</h1>
+                <h2 id="WEBDEVELOPER">WEB DEVELOPER</h2>    
             </section>
-            <!--
+           <!--
             <nav>
-                <a href="#">PROJECTS</a> 
-                <a href="#">CONTACT</a>
+                <a href="#projects">PROJECTS</a> 
+                <a href="#contacts">CONTACTS</a>
             </nav>
-            -->                    
+            -->                 
         </header>
 
         
@@ -60,7 +60,7 @@ SPECIALTIES: Javascript, AngularJS, React/Redux, Polymer, Bootstrap, HTML, CSS, 
                                 •  Developed an offline-first app which can display all related information of the record users search for.
                             </p>
                             <p>
-                                •  Used Discogs, ebay, Spotify and WhoSampled to fetch data. 
+                                •  Used Discogs, ebay and Spotify API to fetch data. 
                             </p>
                         </article>
                         </div>
@@ -180,6 +180,18 @@ SPECIALTIES: Javascript, AngularJS, React/Redux, Polymer, Bootstrap, HTML, CSS, 
        
         
         <script >
+            var last_known_scroll_position = 0;
+            
+            window.addEventListener('scroll', function(e) {
+                if(window.scrollY>94){
+                    document.getElementById("WEBDEVELOPER").style.display="none"; 
+                    document.getElementById("EdwardLai").style.fontSize="26px"; 
+                }
+                else{
+                    document.getElementById("WEBDEVELOPER").style.display="block";
+                    document.getElementById("EdwardLai").style.fontSize="24px"; 
+                }
+            });
         </script>
     </body>
 </html>
