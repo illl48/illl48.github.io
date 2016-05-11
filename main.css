@@ -250,3 +250,22 @@ body{
     text-decoration: none;
     margin: 10px;
 }
+
+#WEBDEVELOPER{
+    -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+}
+
+#WEBDEVELOPER.scrolled{
+    font-size: 0px;
+}
+
+#EdwardLai{
+    font-size: 24px;
+    -webkit-transition: all .5s ease;
+            transition: all .5s ease;
+}
+
+#EdwardLai.scrolled{
+    font-size: 26px;
+}

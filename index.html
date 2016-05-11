@@ -180,16 +180,16 @@ SPECIALTIES: Javascript, AngularJS, React/Redux, Polymer, Bootstrap, HTML, CSS, 
        
         
         <script >
-            var last_known_scroll_position = 0;
-            
             window.addEventListener('scroll', function(e) {
+                document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight; 
+                
                 if(window.scrollY>35){
-                    document.getElementById("WEBDEVELOPER").style.display="none"; 
-                    document.getElementById("EdwardLai").style.fontSize="26px"; 
+                    document.getElementById("WEBDEVELOPER").className = "scrolled";
+                    document.getElementById("EdwardLai").className = "scrolled"; 
                 }
                 else{
-                    document.getElementById("WEBDEVELOPER").style.display="block";
-                    document.getElementById("EdwardLai").style.fontSize="24px"; 
+                    document.getElementById("WEBDEVELOPER").className = "";
+                    document.getElementById("EdwardLai").className = "";
                 }
             });
         </script>
