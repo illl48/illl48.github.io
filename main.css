@@ -64,7 +64,7 @@ body{
 
 #afterHeader{
     position: relative;
-    top:94px;
+    top:0px;
     width: 100%;
     font-weight: bold;
     text-align: center;

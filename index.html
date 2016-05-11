@@ -180,9 +180,11 @@ SPECIALTIES: Javascript, AngularJS, React/Redux, Polymer, Bootstrap, HTML, CSS, 
        
         
         <script >
-            window.addEventListener('scroll', function(e) {
-                document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight; 
-                
+            document.addEventListener("DOMContentLoaded", function(event) {
+                document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight+ "px"; 
+            });
+            
+            window.addEventListener('scroll', function(e) {                
                 if(window.scrollY>35){
                     document.getElementById("WEBDEVELOPER").className = "scrolled";
                     document.getElementById("EdwardLai").className = "scrolled"; 
@@ -190,6 +192,7 @@ SPECIALTIES: Javascript, AngularJS, React/Redux, Polymer, Bootstrap, HTML, CSS, 
                 else{
                     document.getElementById("WEBDEVELOPER").className = "";
                     document.getElementById("EdwardLai").className = "";
+                    //document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight + 15 + "px"; 
                 }
             });
         </script>
