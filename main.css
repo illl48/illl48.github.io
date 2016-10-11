@@ -38,12 +38,14 @@ body{
     font-family: 'Oleo Script Swash Caps', cursive;
     margin: 0;
     padding: 0;
+    font-size: 24px;
 }
 
 .headerWrapper h2{
     margin: 0;
     padding: 0;
     font-family: 'Crete Round', serif;
+    font-size: 20px;
 }
 
 #contactsWRapper{
@@ -74,7 +76,7 @@ body{
     padding-top: 20px;
     position: relative;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     background-color: white;
     
 }
@@ -241,14 +243,14 @@ body{
 #contacts{
     background-color: #0F7A94;
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     color: white;
 }
 
 #contacts a{
     color: #164B65;
     text-decoration: none;
-    margin: 10px;
+    margin: 20px 10px 20px 10px;
 }
 
 #WEBDEVELOPER{

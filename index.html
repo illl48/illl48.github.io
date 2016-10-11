@@ -228,6 +228,10 @@ SPECIALTIES: Javascript, React/Redux, Polymer, AngularJS, Bootstrap, HTML, CSS, 
             document.addEventListener("DOMContentLoaded", function(event) {
                 document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight+ "px"; 
             });
+
+            window.addEventListener('resize', function(event){
+              document.getElementById("afterHeader").style.top = document.getElementById("realHeader").offsetHeight+ "px"; 
+            });
             
             window.addEventListener('scroll', function(e) {                
                 if(window.scrollY>35){
